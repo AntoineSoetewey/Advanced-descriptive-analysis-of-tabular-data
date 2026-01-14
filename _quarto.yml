@@ -1,0 +1,27 @@
+project:
+  type: book
+
+book:
+  title: "Advanced descriptive analysis of tabular data"
+  author: "Antoine Soetewey & Cédric Heuchenne"
+  date: today
+  chapters:
+    - index.qmd
+    - about.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+  epub: default
+
+editor: visual
+
