@@ -11,6 +11,12 @@ book:
     - intro.qmd
     - summary.qmd
     - references.qmd
+  search: true
+  repo-url: https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data
+  repo-actions: [edit, issue]
+  downloads: [pdf, epub]
+  sharing: [twitter, facebook, linkedin]
+  cover-image: cover.png
 
 bibliography: references.bib
 
