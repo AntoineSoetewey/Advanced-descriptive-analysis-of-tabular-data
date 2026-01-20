@@ -1,5 +1,5 @@
 # About the authors {.unnumbered}
 
-**Antoine Soetewey** is a postdoctoral researcher in data science and statistics at HEC Liège and UCLouvain Saint-Louis Brussels. He works on statistical methods and data analysis, with a focus on clear communication and practical applications.
+**Antoine Soetewey** is a postdoctoral researcher in data science and statistics at HEC Liège and UCLouvain Saint-Louis Brussels. He works on statistical methods and data analysis, with a focus on clear communication and practical applications. More information is available at [antoinesoetewey.com](https://antoinesoetewey.com).
 
 **Cédric Heuchenne** is a professor at UCLouvain and HEC Liège. He is affiliated with research and teaching units in data analysis and modeling, and contributes expertise in statistics and applied methods.

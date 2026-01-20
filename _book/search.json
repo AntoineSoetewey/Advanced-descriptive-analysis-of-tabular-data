@@ -44,7 +44,7 @@
     "href": "index.html#acknowledgments",
     "title": "Advanced Descriptive Analysis of Tabular Data",
     "section": "Acknowledgments",
-    "text": "Acknowledgments\nThis work has been shaped by collaborations with colleagues, conversations with practitioners, and feedback from students. We are particularly grateful to researchers from UCLouvain Saint-Louis Brussels involved in the Beamm research project for their insights and support.\nWe also acknowledge the open-source software communities whose tools make this work possible, including R, Python, Shiny, Quarto, and countless contributed packages.",
+    "text": "Acknowledgments\nThis work has been shaped by collaborations with colleagues, conversations with practitioners, and feedback from students and the open-source community. We are particularly grateful to researchers from UCLouvain Saint-Louis Brussels involved in the Beamm research project for their insights and support.\nWe also acknowledge the open-source software communities whose tools make this work possible, including R, Python, Shiny, Quarto, and countless contributed packages.",
     "crumbs": [
       "Preface"
     ]
@@ -64,7 +64,7 @@
     "href": "about.html",
     "title": "About the authors",
     "section": "",
-    "text": "Antoine Soetewey is a postdoctoral researcher in data science and statistics at HEC Liège and UCLouvain Saint-Louis Brussels. He works on statistical methods and data analysis, with a focus on clear communication and practical applications.\nCédric Heuchenne is a professor at UCLouvain and HEC Liège. He is affiliated with research and teaching units in data analysis and modeling, and contributes expertise in statistics and applied methods.",
+    "text": "Antoine Soetewey is a postdoctoral researcher in data science and statistics at HEC Liège and UCLouvain Saint-Louis Brussels. He works on statistical methods and data analysis, with a focus on clear communication and practical applications. More information is available at antoinesoetewey.com.\nCédric Heuchenne is a professor at UCLouvain and HEC Liège. He is affiliated with research and teaching units in data analysis and modeling, and contributes expertise in statistics and applied methods.",
     "crumbs": [
       "About the authors"
     ]

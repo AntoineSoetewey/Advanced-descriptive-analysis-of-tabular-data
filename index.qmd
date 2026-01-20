@@ -49,7 +49,7 @@ The book is organized into seven parts:
 
 ## Acknowledgments
 
-This work has been shaped by collaborations with colleagues, conversations with practitioners, and feedback from students. We are particularly grateful to researchers from UCLouvain Saint-Louis Brussels involved in the Beamm research project for their insights and support.
+This work has been shaped by collaborations with colleagues, conversations with practitioners, and feedback from students and the open-source community. We are particularly grateful to researchers from UCLouvain Saint-Louis Brussels involved in the Beamm research project for their insights and support.
 
 We also acknowledge the open-source software communities whose tools make this work possible, including R, Python, Shiny, Quarto, and countless contributed packages.
 
