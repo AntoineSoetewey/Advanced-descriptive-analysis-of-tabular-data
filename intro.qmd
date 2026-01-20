@@ -1,9 +1,120 @@
-# Introduction
+# Introduction {#sec-introduction}
 
-This is a book created from markdown and executable code.
+## The Challenge of Describing Complex Data
 
-See @knuth84 for additional discussion of literate programming.
+When confronted with a dataset containing dozens or hundreds of variables—mixing continuous measurements, categorical indicators, ordinal scales, and binary flags—how do we make sense of it? How do we identify the most important patterns, detect unexpected associations, and communicate our findings effectively?
 
-```{r}
-1 + 1
-```
+Traditional descriptive statistics (means, medians, frequency tables, correlation matrices) remain essential, but they quickly become insufficient as data complexity grows. A correlation matrix for 50 variables contains 1,225 pairwise relationships, most of which are noise. Standard summary statistics provide no guidance on which variables matter most, how they interact, or what segments or subpopulations might exist in the data.
+
+This book addresses the challenge of **advanced descriptive analysis**: moving beyond elementary summaries to extract meaningful structure from complex tabular data.
+
+## What Is Descriptive Analysis?
+
+Descriptive analysis characterizes the properties of a dataset—its distributions, central tendencies, variability, associations, and patterns—without making claims about causation or population-level inference. While often contrasted with inferential or predictive analysis, descriptive work is neither simpler nor less valuable.
+
+Good descriptive analysis:
+
+-   **Reveals structure**: identifying clusters, segments, or natural groupings
+-   **Quantifies associations**: measuring relationships between variables of mixed types
+-   **Guides further analysis**: highlighting variables and relationships worthy of deeper investigation
+-   **Communicates findings**: translating complex patterns into actionable insights
+
+In many applied contexts—policy evaluation, exploratory journalism, early-stage research—descriptive analysis is the primary goal, not a mere prelude to inference.
+
+## Why Advanced Methods?
+
+Standard descriptive tools have well-known limitations:
+
+-   **Univariate summaries** ignore multivariate structure and conditional relationships
+-   **Correlation coefficients** only capture linear associations between continuous variables
+-   **Cross-tabulations** become unwieldy with many categories or variables
+-   **Scatterplot matrices** fail to scale beyond a handful of variables
+
+Advanced methods address these limitations by:
+
+1.  **Handling mixed-type variables**: combining continuous, categorical, ordinal, and binary data in a unified framework
+2.  **Capturing nonlinear relationships**: detecting patterns that correlation coefficients miss
+3.  **Automating discovery**: using algorithmic approaches to identify important features and interactions
+4.  **Visualizing high-dimensional structure**: representing complex associations through networks, trees, and interactive graphics
+5.  **Enabling exploration**: providing interactive tools that allow analysts to interrogate data from multiple angles
+
+## Methods Covered in This Book
+
+This book synthesizes several methodological traditions:
+
+### Tree-Based Methods
+
+Regression and classification trees offer a powerful yet interpretable approach to segmenting populations and understanding conditional structure in data. Trees recursively partition data based on variable thresholds, producing interpretable decision rules that separate observations into relatively homogeneous groups. Unlike black-box predictive models, tree structures are transparent: practitioners can easily explain why a particular observation falls into a specific segment. Trees naturally reveal which variables are most discriminative and at what thresholds decisions change. This makes them invaluable for exploratory work, program targeting, and communicating findings to stakeholders who value transparency. Moreover, ensemble extensions—combining multiple trees through random forests or boosting—improve robustness while preserving the ability to extract interpretable variable importance measures and identify complex interactions.
+
+### Interpretable Machine Learning
+
+Modern machine learning models often achieve superior predictive accuracy compared to classical statistical methods, but at the cost of interpretability. Interpretable machine learning bridges this gap by providing techniques to understand what complex models have learned from data. Methods like permutation-based feature importance identify which variables the model relies on most heavily. Partial dependence plots and individual conditional expectation curves visualize how predictions change as individual features vary, revealing nonlinear relationships and thresholds. Shapley values—grounded in cooperative game theory—decompose each prediction into additive contributions from each feature, providing both global importance rankings and local explanations for individual observations. These post-hoc interpretation tools transform predictive models into descriptive instruments, enabling analysts to extract actionable insights about variable relationships while leveraging the flexibility of modern ML algorithms.
+
+### AutoML for Exploration
+
+Automated machine learning platforms systematically search across hundreds or thousands of model configurations, feature transformations, and hyperparameters to identify the best-performing models for a given task. Rather than viewing AutoML purely as a prediction tool, we leverage it as an exploratory instrument. AutoML workflows automatically discover which features matter, which transformations improve predictive signals, and which variable interactions are important. By screening a vast model space, AutoML can identify complex patterns that might be missed through manual feature engineering or simpler methods. When interpreted descriptively—focusing on which transformations boost performance rather than out-of-sample accuracy itself—AutoML becomes a rapid hypothesis-generation engine, especially valuable for preliminary analysis of new datasets or when domain expertise is limited. The rankings and performances of different models also reveal which features and interactions the data best supports.
+
+### Association Measures
+
+A central challenge in descriptive analysis is measuring association when variables are not all continuous. Real-world datasets routinely mix quantitative, qualitative, ordinal, and binary variables, making classical measures like Pearson correlation inadequate or misleading. This book presents a **type-aware framework for association** that selects and scales association measures according to the specific combination of variable types being related. For continuous-continuous pairs, we discuss Pearson, Spearman, and distance-based correlations. For categorical-categorical associations, we cover Cramér's V and related measures. For mixed pairs, we employ model-based measures and mutual information approaches. Crucially, these measures are interpreted descriptively rather than inferentially: the goal is not null hypothesis testing, but **comparability and ranking**—identifying which variable pairs exhibit relatively strong relationships meriting closer inspection. By placing heterogeneous associations on a common scale (often $[0, 1]$), analysts can scan large multivariate datasets and focus attention on the most informative relationships, regardless of variable type. This pragmatic, unified treatment transforms a fragmented set of statistical tools into a coherent exploratory framework.
+
+### Network Representations
+
+When a dataset contains dozens or hundreds of variables, even a well-chosen association measure produces an overwhelming matrix of pairwise relationships. Network-based representations address this scalability challenge by encoding associations as **variable networks** where nodes represent variables and edges represent relationships exceeding a chosen threshold. Edge weights or colors encode association magnitudes, while network layouts position variables spatially such that strongly related variables cluster near each other. This spatial organization renders high-dimensional association structure visible and interpretable at a glance. Beyond individual associations, network analysis reveals **global structure**: communities of tightly interconnected variables that may represent distinct domains or latent constructs, hub variables that bridge multiple domains, and peripheral variables carrying unique information. Centrality measures (degree, betweenness, eigenvector) identify influential variables. Community detection algorithms partition variables into meaningful groups. These higher-order network properties are difficult to discern from association matrices or pairwise plots alone, yet they often provide crucial insights into data structure. Network representations therefore serve as a cognitive map of the dataset, guiding exploratory analysis through high-dimensional association space.
+
+### Interactive Visual Analytics
+
+Static visualizations answer pre-determined questions; interactive tools enable dynamic exploration. Interactive graphics—particularly Shiny applications—allow analysts to filter data by conditions, aggregate across subgroups, adjust plot parameters, and link multiple views in real time. This interactivity supports hypothesis generation and refinement: analysts can test "what if" scenarios, drill down into subpopulations, and detect patterns that might not appear in static plots. Dashboards combine multiple interactive visualizations into coordinated workflows, allowing stakeholders to explore data according to their own questions rather than passively receiving predetermined findings. For descriptive analysis in particular, interactivity is essential for handling high-dimensional data. An interactive tool can present association networks, tree structures, and distributions while allowing users to focus on subsets, time periods, or demographic groups of interest. This chapter introduces Shiny-based applications and demonstrates how to build interactive descriptive tools that scale to real-world data complexity.
+
+## Real-World Applications
+
+Each method is illustrated with applied examples drawn from:
+
+-   **Public policy**: understanding determinants of program participation, analyzing survey data on citizen attitudes
+-   **Public health**: exploring risk factors in epidemiological data, characterizing patient populations
+-   **Business analytics**: segmenting customers, identifying drivers of satisfaction or churn
+-   **Social science research**: analyzing survey responses, detecting patterns in observational data
+-   **Data journalism**: investigating patterns in government data, economic indicators, or social trends
+
+Throughout the book, these methods are implemented in R and demonstrated on real datasets. A recurring example is the **AssociationExplorer** Shiny application, developed as part of the research underlying this work, which integrates multiple descriptive techniques into a unified interactive interface. While all methods can be implemented using standard statistical software, AssociationExplorer provides a practical tool for immediate exploratory use. These examples demonstrate that advanced descriptive methods are not academic exercises—they solve genuine problems faced by analysts across diverse fields.
+
+## Relationship to Other Analytical Goals
+
+Descriptive analysis intersects with but differs from:
+
+-   **Exploratory Data Analysis (EDA)**: Descriptive analysis is a form of EDA, but emphasizes quantitative measures and formal methods alongside graphical exploration
+-   **Predictive modeling**: We use predictive models descriptively, focusing on interpretation rather than out-of-sample performance
+-   **Causal inference**: Descriptive analysis identifies associations but does not claim causation; it can, however, inform causal hypotheses
+-   **Dimension reduction**: Methods like PCA and MCA reduce dimensionality; we emphasize interpretable summaries that preserve variable identities
+
+## Structure and Learning Path
+
+The book proceeds from foundations to applications:
+
+-   **Chapters 1–2** establish conceptual groundwork and introduce the challenge of mixed-type data
+-   **Chapters 3–11** present three families of advanced methods (trees, interpretable ML, AutoML)
+-   **Chapters 12–14** focus on association measures and network representations
+-   **Chapters 15–17** introduce interactive visual analytics
+-   **Chapters 18–20** present extended applied case studies
+
+Readers can follow a linear path or jump to chapters matching their immediate needs. Code examples and exercises throughout encourage hands-on practice.
+
+## Computational Tools
+
+Examples use R, chosen for its rich ecosystem of statistical graphics and modeling packages. Key packages include:
+
+-   `{ggplot2}` and `{plotly}` for visualization
+-   `{rpart}` and `{partykit}` for tree-based methods
+-   `{iml}` for interpretable ML
+-   `{h2o}` for AutoML
+-   `{corrr}`, `{energy}`, `{minerva}` for association measures
+-   `{igraph}` and `{ggraph}` for network visualization
+-   `{shiny}` for interactive applications
+
+All code is provided in reproducible format, and datasets are publicly available.
+
+## Looking Ahead
+
+The chapters that follow present a coherent toolkit for advanced descriptive analysis. While methods vary, the underlying goal remains constant: to help you see more deeply into your data, communicate findings clearly, and make better-informed decisions.
+
+Descriptive analysis is both art and science—requiring statistical rigor, visual judgment, and domain knowledge. We hope this book equips you with methods and perspectives that enhance all three.

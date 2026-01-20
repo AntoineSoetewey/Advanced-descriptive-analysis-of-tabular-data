@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introduction – Advanced Descriptive Analysis of Tabular Data</title>
+<title>17&nbsp; The AssociationExplorer Application – Advanced Descriptive Analysis of Tabular Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter-01-beyond-basic-descriptives.html" rel="next">
-<link href="./about.html" rel="prev">
+<link href="./chapter-17-communication-visualization.html" rel="next">
+<link href="./chapter-15-shiny-exploration.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -71,35 +71,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -112,7 +83,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Foundations</a></li><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-15-shiny-exploration.html">Interactive Visual Analytics</a></li><li class="breadcrumb-item"><a href="./chapter-16-association-explorer.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">The AssociationExplorer Application</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -203,7 +174,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -354,7 +325,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-16-association-explorer.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter-16-association-explorer.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">The AssociationExplorer Application</span></span></a>
   </div>
 </li>
@@ -412,37 +383,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#the-challenge-of-describing-complex-data" id="toc-the-challenge-of-describing-complex-data" class="nav-link active" data-scroll-target="#the-challenge-of-describing-complex-data"><span class="header-section-number">1.1</span> The Challenge of Describing Complex Data</a></li>
-  <li><a href="#what-is-descriptive-analysis" id="toc-what-is-descriptive-analysis" class="nav-link" data-scroll-target="#what-is-descriptive-analysis"><span class="header-section-number">1.2</span> What Is Descriptive Analysis?</a></li>
-  <li><a href="#why-advanced-methods" id="toc-why-advanced-methods" class="nav-link" data-scroll-target="#why-advanced-methods"><span class="header-section-number">1.3</span> Why Advanced Methods?</a></li>
-  <li><a href="#methods-covered-in-this-book" id="toc-methods-covered-in-this-book" class="nav-link" data-scroll-target="#methods-covered-in-this-book"><span class="header-section-number">1.4</span> Methods Covered in This Book</a>
-  <ul class="collapse">
-  <li><a href="#tree-based-methods" id="toc-tree-based-methods" class="nav-link" data-scroll-target="#tree-based-methods"><span class="header-section-number">1.4.1</span> Tree-Based Methods</a></li>
-  <li><a href="#interpretable-machine-learning" id="toc-interpretable-machine-learning" class="nav-link" data-scroll-target="#interpretable-machine-learning"><span class="header-section-number">1.4.2</span> Interpretable Machine Learning</a></li>
-  <li><a href="#automl-for-exploration" id="toc-automl-for-exploration" class="nav-link" data-scroll-target="#automl-for-exploration"><span class="header-section-number">1.4.3</span> AutoML for Exploration</a></li>
-  <li><a href="#association-measures" id="toc-association-measures" class="nav-link" data-scroll-target="#association-measures"><span class="header-section-number">1.4.4</span> Association Measures</a></li>
-  <li><a href="#network-representations" id="toc-network-representations" class="nav-link" data-scroll-target="#network-representations"><span class="header-section-number">1.4.5</span> Network Representations</a></li>
-  <li><a href="#interactive-visual-analytics" id="toc-interactive-visual-analytics" class="nav-link" data-scroll-target="#interactive-visual-analytics"><span class="header-section-number">1.4.6</span> Interactive Visual Analytics</a></li>
-  </ul></li>
-  <li><a href="#real-world-applications" id="toc-real-world-applications" class="nav-link" data-scroll-target="#real-world-applications"><span class="header-section-number">1.5</span> Real-World Applications</a></li>
-  <li><a href="#relationship-to-other-analytical-goals" id="toc-relationship-to-other-analytical-goals" class="nav-link" data-scroll-target="#relationship-to-other-analytical-goals"><span class="header-section-number">1.6</span> Relationship to Other Analytical Goals</a></li>
-  <li><a href="#structure-and-learning-path" id="toc-structure-and-learning-path" class="nav-link" data-scroll-target="#structure-and-learning-path"><span class="header-section-number">1.7</span> Structure and Learning Path</a></li>
-  <li><a href="#computational-tools" id="toc-computational-tools" class="nav-link" data-scroll-target="#computational-tools"><span class="header-section-number">1.8</span> Computational Tools</a></li>
-  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">1.9</span> Looking Ahead</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/edit/main/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/blob/main/intro.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Foundations</a></li><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-15-shiny-exploration.html">Interactive Visual Analytics</a></li><li class="breadcrumb-item"><a href="./chapter-16-association-explorer.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">The AssociationExplorer Application</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-introduction" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">The AssociationExplorer Application</span></h1>
 </div>
 
 
@@ -459,125 +408,8 @@ window.Quarto = {
 </header>
 
 
-<section id="the-challenge-of-describing-complex-data" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="the-challenge-of-describing-complex-data"><span class="header-section-number">1.1</span> The Challenge of Describing Complex Data</h2>
-<p>When confronted with a dataset containing dozens or hundreds of variables—mixing continuous measurements, categorical indicators, ordinal scales, and binary flags—how do we make sense of it? How do we identify the most important patterns, detect unexpected associations, and communicate our findings effectively?</p>
-<p>Traditional descriptive statistics (means, medians, frequency tables, correlation matrices) remain essential, but they quickly become insufficient as data complexity grows. A correlation matrix for 50 variables contains 1,225 pairwise relationships, most of which are noise. Standard summary statistics provide no guidance on which variables matter most, how they interact, or what segments or subpopulations might exist in the data.</p>
-<p>This book addresses the challenge of <strong>advanced descriptive analysis</strong>: moving beyond elementary summaries to extract meaningful structure from complex tabular data.</p>
-</section>
-<section id="what-is-descriptive-analysis" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="what-is-descriptive-analysis"><span class="header-section-number">1.2</span> What Is Descriptive Analysis?</h2>
-<p>Descriptive analysis characterizes the properties of a dataset—its distributions, central tendencies, variability, associations, and patterns—without making claims about causation or population-level inference. While often contrasted with inferential or predictive analysis, descriptive work is neither simpler nor less valuable.</p>
-<p>Good descriptive analysis:</p>
-<ul>
-<li><strong>Reveals structure</strong>: identifying clusters, segments, or natural groupings</li>
-<li><strong>Quantifies associations</strong>: measuring relationships between variables of mixed types</li>
-<li><strong>Guides further analysis</strong>: highlighting variables and relationships worthy of deeper investigation</li>
-<li><strong>Communicates findings</strong>: translating complex patterns into actionable insights</li>
-</ul>
-<p>In many applied contexts—policy evaluation, exploratory journalism, early-stage research—descriptive analysis is the primary goal, not a mere prelude to inference.</p>
-</section>
-<section id="why-advanced-methods" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="why-advanced-methods"><span class="header-section-number">1.3</span> Why Advanced Methods?</h2>
-<p>Standard descriptive tools have well-known limitations:</p>
-<ul>
-<li><strong>Univariate summaries</strong> ignore multivariate structure and conditional relationships</li>
-<li><strong>Correlation coefficients</strong> only capture linear associations between continuous variables</li>
-<li><strong>Cross-tabulations</strong> become unwieldy with many categories or variables</li>
-<li><strong>Scatterplot matrices</strong> fail to scale beyond a handful of variables</li>
-</ul>
-<p>Advanced methods address these limitations by:</p>
-<ol type="1">
-<li><strong>Handling mixed-type variables</strong>: combining continuous, categorical, ordinal, and binary data in a unified framework</li>
-<li><strong>Capturing nonlinear relationships</strong>: detecting patterns that correlation coefficients miss</li>
-<li><strong>Automating discovery</strong>: using algorithmic approaches to identify important features and interactions</li>
-<li><strong>Visualizing high-dimensional structure</strong>: representing complex associations through networks, trees, and interactive graphics</li>
-<li><strong>Enabling exploration</strong>: providing interactive tools that allow analysts to interrogate data from multiple angles</li>
-</ol>
-</section>
-<section id="methods-covered-in-this-book" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="methods-covered-in-this-book"><span class="header-section-number">1.4</span> Methods Covered in This Book</h2>
-<p>This book synthesizes several methodological traditions:</p>
-<section id="tree-based-methods" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="tree-based-methods"><span class="header-section-number">1.4.1</span> Tree-Based Methods</h3>
-<p>Regression and classification trees offer a powerful yet interpretable approach to segmenting populations and understanding conditional structure in data. Trees recursively partition data based on variable thresholds, producing interpretable decision rules that separate observations into relatively homogeneous groups. Unlike black-box predictive models, tree structures are transparent: practitioners can easily explain why a particular observation falls into a specific segment. Trees naturally reveal which variables are most discriminative and at what thresholds decisions change. This makes them invaluable for exploratory work, program targeting, and communicating findings to stakeholders who value transparency. Moreover, ensemble extensions—combining multiple trees through random forests or boosting—improve robustness while preserving the ability to extract interpretable variable importance measures and identify complex interactions.</p>
-</section>
-<section id="interpretable-machine-learning" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="interpretable-machine-learning"><span class="header-section-number">1.4.2</span> Interpretable Machine Learning</h3>
-<p>Modern machine learning models often achieve superior predictive accuracy compared to classical statistical methods, but at the cost of interpretability. Interpretable machine learning bridges this gap by providing techniques to understand what complex models have learned from data. Methods like permutation-based feature importance identify which variables the model relies on most heavily. Partial dependence plots and individual conditional expectation curves visualize how predictions change as individual features vary, revealing nonlinear relationships and thresholds. Shapley values—grounded in cooperative game theory—decompose each prediction into additive contributions from each feature, providing both global importance rankings and local explanations for individual observations. These post-hoc interpretation tools transform predictive models into descriptive instruments, enabling analysts to extract actionable insights about variable relationships while leveraging the flexibility of modern ML algorithms.</p>
-</section>
-<section id="automl-for-exploration" class="level3" data-number="1.4.3">
-<h3 data-number="1.4.3" class="anchored" data-anchor-id="automl-for-exploration"><span class="header-section-number">1.4.3</span> AutoML for Exploration</h3>
-<p>Automated machine learning platforms systematically search across hundreds or thousands of model configurations, feature transformations, and hyperparameters to identify the best-performing models for a given task. Rather than viewing AutoML purely as a prediction tool, we leverage it as an exploratory instrument. AutoML workflows automatically discover which features matter, which transformations improve predictive signals, and which variable interactions are important. By screening a vast model space, AutoML can identify complex patterns that might be missed through manual feature engineering or simpler methods. When interpreted descriptively—focusing on which transformations boost performance rather than out-of-sample accuracy itself—AutoML becomes a rapid hypothesis-generation engine, especially valuable for preliminary analysis of new datasets or when domain expertise is limited. The rankings and performances of different models also reveal which features and interactions the data best supports.</p>
-</section>
-<section id="association-measures" class="level3" data-number="1.4.4">
-<h3 data-number="1.4.4" class="anchored" data-anchor-id="association-measures"><span class="header-section-number">1.4.4</span> Association Measures</h3>
-<p>A central challenge in descriptive analysis is measuring association when variables are not all continuous. Real-world datasets routinely mix quantitative, qualitative, ordinal, and binary variables, making classical measures like Pearson correlation inadequate or misleading. This book presents a <strong>type-aware framework for association</strong> that selects and scales association measures according to the specific combination of variable types being related. For continuous-continuous pairs, we discuss Pearson, Spearman, and distance-based correlations. For categorical-categorical associations, we cover Cramér’s V and related measures. For mixed pairs, we employ model-based measures and mutual information approaches. Crucially, these measures are interpreted descriptively rather than inferentially: the goal is not null hypothesis testing, but <strong>comparability and ranking</strong>—identifying which variable pairs exhibit relatively strong relationships meriting closer inspection. By placing heterogeneous associations on a common scale (often <span class="math inline">\([0, 1]\)</span>), analysts can scan large multivariate datasets and focus attention on the most informative relationships, regardless of variable type. This pragmatic, unified treatment transforms a fragmented set of statistical tools into a coherent exploratory framework.</p>
-</section>
-<section id="network-representations" class="level3" data-number="1.4.5">
-<h3 data-number="1.4.5" class="anchored" data-anchor-id="network-representations"><span class="header-section-number">1.4.5</span> Network Representations</h3>
-<p>When a dataset contains dozens or hundreds of variables, even a well-chosen association measure produces an overwhelming matrix of pairwise relationships. Network-based representations address this scalability challenge by encoding associations as <strong>variable networks</strong> where nodes represent variables and edges represent relationships exceeding a chosen threshold. Edge weights or colors encode association magnitudes, while network layouts position variables spatially such that strongly related variables cluster near each other. This spatial organization renders high-dimensional association structure visible and interpretable at a glance. Beyond individual associations, network analysis reveals <strong>global structure</strong>: communities of tightly interconnected variables that may represent distinct domains or latent constructs, hub variables that bridge multiple domains, and peripheral variables carrying unique information. Centrality measures (degree, betweenness, eigenvector) identify influential variables. Community detection algorithms partition variables into meaningful groups. These higher-order network properties are difficult to discern from association matrices or pairwise plots alone, yet they often provide crucial insights into data structure. Network representations therefore serve as a cognitive map of the dataset, guiding exploratory analysis through high-dimensional association space.</p>
-</section>
-<section id="interactive-visual-analytics" class="level3" data-number="1.4.6">
-<h3 data-number="1.4.6" class="anchored" data-anchor-id="interactive-visual-analytics"><span class="header-section-number">1.4.6</span> Interactive Visual Analytics</h3>
-<p>Static visualizations answer pre-determined questions; interactive tools enable dynamic exploration. Interactive graphics—particularly Shiny applications—allow analysts to filter data by conditions, aggregate across subgroups, adjust plot parameters, and link multiple views in real time. This interactivity supports hypothesis generation and refinement: analysts can test “what if” scenarios, drill down into subpopulations, and detect patterns that might not appear in static plots. Dashboards combine multiple interactive visualizations into coordinated workflows, allowing stakeholders to explore data according to their own questions rather than passively receiving predetermined findings. For descriptive analysis in particular, interactivity is essential for handling high-dimensional data. An interactive tool can present association networks, tree structures, and distributions while allowing users to focus on subsets, time periods, or demographic groups of interest. This chapter introduces Shiny-based applications and demonstrates how to build interactive descriptive tools that scale to real-world data complexity.</p>
-</section>
-</section>
-<section id="real-world-applications" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="real-world-applications"><span class="header-section-number">1.5</span> Real-World Applications</h2>
-<p>Each method is illustrated with applied examples drawn from:</p>
-<ul>
-<li><strong>Public policy</strong>: understanding determinants of program participation, analyzing survey data on citizen attitudes</li>
-<li><strong>Public health</strong>: exploring risk factors in epidemiological data, characterizing patient populations</li>
-<li><strong>Business analytics</strong>: segmenting customers, identifying drivers of satisfaction or churn</li>
-<li><strong>Social science research</strong>: analyzing survey responses, detecting patterns in observational data</li>
-<li><strong>Data journalism</strong>: investigating patterns in government data, economic indicators, or social trends</li>
-</ul>
-<p>Throughout the book, these methods are implemented in R and demonstrated on real datasets. A recurring example is the <strong>AssociationExplorer</strong> Shiny application, developed as part of the research underlying this work, which integrates multiple descriptive techniques into a unified interactive interface. While all methods can be implemented using standard statistical software, AssociationExplorer provides a practical tool for immediate exploratory use. These examples demonstrate that advanced descriptive methods are not academic exercises—they solve genuine problems faced by analysts across diverse fields.</p>
-</section>
-<section id="relationship-to-other-analytical-goals" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="relationship-to-other-analytical-goals"><span class="header-section-number">1.6</span> Relationship to Other Analytical Goals</h2>
-<p>Descriptive analysis intersects with but differs from:</p>
-<ul>
-<li><strong>Exploratory Data Analysis (EDA)</strong>: Descriptive analysis is a form of EDA, but emphasizes quantitative measures and formal methods alongside graphical exploration</li>
-<li><strong>Predictive modeling</strong>: We use predictive models descriptively, focusing on interpretation rather than out-of-sample performance</li>
-<li><strong>Causal inference</strong>: Descriptive analysis identifies associations but does not claim causation; it can, however, inform causal hypotheses</li>
-<li><strong>Dimension reduction</strong>: Methods like PCA and MCA reduce dimensionality; we emphasize interpretable summaries that preserve variable identities</li>
-</ul>
-</section>
-<section id="structure-and-learning-path" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="structure-and-learning-path"><span class="header-section-number">1.7</span> Structure and Learning Path</h2>
-<p>The book proceeds from foundations to applications:</p>
-<ul>
-<li><strong>Chapters 1–2</strong> establish conceptual groundwork and introduce the challenge of mixed-type data</li>
-<li><strong>Chapters 3–11</strong> present three families of advanced methods (trees, interpretable ML, AutoML)</li>
-<li><strong>Chapters 12–14</strong> focus on association measures and network representations</li>
-<li><strong>Chapters 15–17</strong> introduce interactive visual analytics</li>
-<li><strong>Chapters 18–20</strong> present extended applied case studies</li>
-</ul>
-<p>Readers can follow a linear path or jump to chapters matching their immediate needs. Code examples and exercises throughout encourage hands-on practice.</p>
-</section>
-<section id="computational-tools" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="computational-tools"><span class="header-section-number">1.8</span> Computational Tools</h2>
-<p>Examples use R, chosen for its rich ecosystem of statistical graphics and modeling packages. Key packages include:</p>
-<ul>
-<li><code>{ggplot2}</code> and <code>{plotly}</code> for visualization</li>
-<li><code>{rpart}</code> and <code>{partykit}</code> for tree-based methods</li>
-<li><code>{iml}</code> for interpretable ML</li>
-<li><code>{h2o}</code> for AutoML</li>
-<li><code>{corrr}</code>, <code>{energy}</code>, <code>{minerva}</code> for association measures</li>
-<li><code>{igraph}</code> and <code>{ggraph}</code> for network visualization</li>
-<li><code>{shiny}</code> for interactive applications</li>
-</ul>
-<p>All code is provided in reproducible format, and datasets are publicly available.</p>
-</section>
-<section id="looking-ahead" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">1.9</span> Looking Ahead</h2>
-<p>The chapters that follow present a coherent toolkit for advanced descriptive analysis. While methods vary, the underlying goal remains constant: to help you see more deeply into your data, communicate findings clearly, and make better-informed decisions.</p>
-<p>Descriptive analysis is both art and science—requiring statistical rigor, visual judgment, and domain knowledge. We hope this book equips you with methods and perspectives that enhance all three.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -982,13 +814,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./about.html" class="pagination-link" aria-label="About the authors">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About the authors</span>
+      <a href="./chapter-15-shiny-exploration.html" class="pagination-link" aria-label="Principles of Interactive Exploration">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Principles of Interactive Exploration</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-01-beyond-basic-descriptives.html" class="pagination-link" aria-label="Beyond Basic Descriptive Statistics">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Beyond Basic Descriptive Statistics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-17-communication-visualization.html" class="pagination-link" aria-label="Communicating Findings Through Visualization">
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Communicating Findings Through Visualization</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -997,4 +829,4 @@ window.Quarto = {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/edit/main/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/blob/main/intro.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/edit/main/chapter-16-association-explorer.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

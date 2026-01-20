@@ -1,9 +1,62 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+Descriptive statistics are often treated as a preliminary step—a routine box to check before moving on to inference, prediction, or causal analysis. Yet in practice, understanding the structure, associations, and patterns within complex tabular data is neither trivial nor purely mechanical. It requires sophisticated methods, thoughtful visualization, and clear communication.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+This book synthesizes advanced techniques for descriptive analysis of tabular data, drawing on recent developments in machine learning, network analysis, and interactive visualization. Our goal is to equip researchers, analysts, policymakers, and data journalists with tools that go beyond means and standard deviations, enabling them to extract actionable insights from multivariate datasets.
 
-```{r}
-1 + 1
-```
+The material presented here emerged from postdoctoral research at the intersection of applied statistics, machine learning, and data visualization. It reflects a pragmatic philosophy: methods should be interpretable, visual, and suitable for communicating findings to statistically literate but non-technical audiences.
+
+## Who This Book Is For
+
+This book is designed for readers who already possess a solid foundation in statistics—including regression analysis, hypothesis testing, and basic multivariate methods. We assume familiarity with concepts like correlation, variance decomposition, and model evaluation.
+
+Our intended audience includes:
+
+-   **Researchers and applied scientists** seeking exploratory tools for complex datasets
+-   **Policymakers and analysts** in government and public institutions
+-   **Data journalists** investigating patterns in social, economic, or health data
+-   **Consultants and analytical teams** in private firms
+-   **Graduate students** in statistics, data science, public policy, or related fields
+
+The material is suitable for a Master-level university course and may serve as a foundation for doctoral-level methodological training.
+
+## Philosophy and Approach
+
+The unifying thread throughout this book is: **How do we move beyond standard descriptive statistics to extract, visualize, and communicate structure in complex tabular data?**
+
+We emphasize:
+
+-   **Interpretability**: Methods that produce understandable results
+-   **Visual analytics**: Graphs and interactive tools as primary analytical instruments
+-   **Methodological transparency**: Explicit discussion of assumptions, trade-offs, and limitations
+-   **Communication**: Presenting results to diverse audiences, from technical peers to policy stakeholders
+
+Rather than purely theoretical exposition, we ground each method in real applied use cases, demonstrating how techniques perform on actual data challenges.
+
+## Structure of the Book
+
+The book is organized into seven parts:
+
+**Part I: Foundations** establishes the conceptual framework, revisiting what it means to "describe" data and introducing the challenge of mixed-type variables and multivariate associations.
+
+**Parts II–IV** present three families of advanced methods: tree-based models for segmentation and description, interpretable machine learning techniques for understanding complex patterns, and AutoML approaches that automate exploration.
+
+**Part V** focuses specifically on association analysis—measuring relationships between variables of different types and representing these associations as networks.
+
+**Part VI** introduces interactive visual analytics, including the AssociationExplorer Shiny application, which integrates many of the methods presented earlier into a unified exploratory interface.
+
+**Part VII** presents extended applied case studies from policy analysis, public health, and business analytics, demonstrating how these methods solve real-world problems.
+
+## Acknowledgments
+
+This work has been shaped by collaborations with colleagues, conversations with practitioners, and feedback from students. We are particularly grateful to researchers from UCLouvain Saint-Louis Brussels involved in the Beamm research project for their insights and support.
+
+We also acknowledge the open-source software communities whose tools make this work possible, including R, Python, Shiny, Quarto, and countless contributed packages.
+
+## How to Use This Book
+
+Chapters can be read sequentially or selectively, depending on your background and interests. Readers already familiar with tree-based methods might skip Part II; those primarily interested in association analysis could jump directly to Part V.
+
+Throughout the book, we provide code examples in R and references to accompanying interactive tools. All datasets, code and source files are available on [GitHub](https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data).
+
+We encourage readers to experiment with the methods on their own data. Descriptive analysis is learned through practice, and the best way to internalize these techniques is to apply them to problems you care about.
