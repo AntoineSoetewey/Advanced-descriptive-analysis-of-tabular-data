@@ -10,47 +10,6 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About the authors",
-    "section": "",
-    "text": "Antoine Soetewey is a postdoctoral researcher in data science and statistics at HEC Liège and UCLouvain Saint-Louis Brussels. He works on statistical methods and data analysis, with a focus on clear communication and practical applications.\nCédric Heuchenne is a professor at UCLouvain and HEC Liège. He is affiliated with research and teaching units in data analysis and modeling, and contributes expertise in statistics and applied methods.",
-    "crumbs": [
-      "About the authors"
-    ]
-  },
-  {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
-    "section": "",
-    "text": "1.1 The Challenge of Describing Complex Data\nWhen confronted with a dataset containing dozens or hundreds of variables—mixing continuous measurements, categorical indicators, ordinal scales, and binary flags—how do we make sense of it? How do we identify the most important patterns, detect unexpected associations, and communicate our findings effectively?\nTraditional descriptive statistics (means, medians, frequency tables, correlation matrices) remain essential, but they quickly become insufficient as data complexity grows. A correlation matrix for 50 variables contains 1,225 pairwise relationships, most of which are noise. Standard summary statistics provide no guidance on which variables matter most, how they interact, or what segments or subpopulations might exist in the data.\nThis book addresses the challenge of advanced descriptive analysis: moving beyond elementary summaries to extract meaningful structure from complex tabular data.",
-    "crumbs": [
-      "Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
-    ]
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "22  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
     "objectID": "index.html#who-this-book-is-for",
     "href": "index.html#who-this-book-is-for",
     "title": "Advanced Descriptive Analysis of Tabular Data",
@@ -101,6 +60,27 @@
     ]
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About the authors",
+    "section": "",
+    "text": "Antoine Soetewey is a postdoctoral researcher in data science and statistics at HEC Liège and UCLouvain Saint-Louis Brussels. He works on statistical methods and data analysis, with a focus on clear communication and practical applications.\nCédric Heuchenne is a professor at UCLouvain and HEC Liège. He is affiliated with research and teaching units in data analysis and modeling, and contributes expertise in statistics and applied methods.",
+    "crumbs": [
+      "About the authors"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1 The Challenge of Describing Complex Data\nWhen confronted with a dataset containing dozens or hundreds of variables—mixing continuous measurements, categorical indicators, ordinal scales, and binary flags—how do we make sense of it? How do we identify the most important patterns, detect unexpected associations, and communicate our findings effectively?\nTraditional descriptive statistics (means, medians, frequency tables, correlation matrices) remain essential, but they quickly become insufficient as data complexity grows. A correlation matrix for 50 variables contains 1,225 pairwise relationships, most of which are noise. Standard summary statistics provide no guidance on which variables matter most, how they interact, or what segments or subpopulations might exist in the data.\nThis book addresses the challenge of advanced descriptive analysis: moving beyond elementary summaries to extract meaningful structure from complex tabular data.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
     "objectID": "intro.html#what-is-descriptive-analysis",
     "href": "intro.html#what-is-descriptive-analysis",
     "title": "1  Introduction",
@@ -128,17 +108,6 @@
     "title": "1  Introduction",
     "section": "1.4 Methods Covered in This Book",
     "text": "1.4 Methods Covered in This Book\nThis book synthesizes several methodological traditions:\n\n1.4.1 Tree-Based Methods\nRegression and classification trees offer a powerful yet interpretable approach to segmenting populations and understanding conditional structure in data. Trees recursively partition data based on variable thresholds, producing interpretable decision rules that separate observations into relatively homogeneous groups. Unlike black-box predictive models, tree structures are transparent: practitioners can easily explain why a particular observation falls into a specific segment. Trees naturally reveal which variables are most discriminative and at what thresholds decisions change. This makes them invaluable for exploratory work, program targeting, and communicating findings to stakeholders who value transparency. Moreover, ensemble extensions—combining multiple trees through random forests or boosting—improve robustness while preserving the ability to extract interpretable variable importance measures and identify complex interactions.\n\n\n1.4.2 Interpretable Machine Learning\nModern machine learning models often achieve superior predictive accuracy compared to classical statistical methods, but at the cost of interpretability. Interpretable machine learning bridges this gap by providing techniques to understand what complex models have learned from data. Methods like permutation-based feature importance identify which variables the model relies on most heavily. Partial dependence plots and individual conditional expectation curves visualize how predictions change as individual features vary, revealing nonlinear relationships and thresholds. Shapley values—grounded in cooperative game theory—decompose each prediction into additive contributions from each feature, providing both global importance rankings and local explanations for individual observations. These post-hoc interpretation tools transform predictive models into descriptive instruments, enabling analysts to extract actionable insights about variable relationships while leveraging the flexibility of modern ML algorithms.\n\n\n1.4.3 AutoML for Exploration\nAutomated machine learning platforms systematically search across hundreds or thousands of model configurations, feature transformations, and hyperparameters to identify the best-performing models for a given task. Rather than viewing AutoML purely as a prediction tool, we leverage it as an exploratory instrument. AutoML workflows automatically discover which features matter, which transformations improve predictive signals, and which variable interactions are important. By screening a vast model space, AutoML can identify complex patterns that might be missed through manual feature engineering or simpler methods. When interpreted descriptively—focusing on which transformations boost performance rather than out-of-sample accuracy itself—AutoML becomes a rapid hypothesis-generation engine, especially valuable for preliminary analysis of new datasets or when domain expertise is limited. The rankings and performances of different models also reveal which features and interactions the data best supports.\n\n\n1.4.4 Association Measures\nA central challenge in descriptive analysis is measuring association when variables are not all continuous. Real-world datasets routinely mix quantitative, qualitative, ordinal, and binary variables, making classical measures like Pearson correlation inadequate or misleading. This book presents a type-aware framework for association that selects and scales association measures according to the specific combination of variable types being related. For continuous-continuous pairs, we discuss Pearson, Spearman, and distance-based correlations. For categorical-categorical associations, we cover Cramér’s V and related measures. For mixed pairs, we employ model-based measures and mutual information approaches. Crucially, these measures are interpreted descriptively rather than inferentially: the goal is not null hypothesis testing, but comparability and ranking—identifying which variable pairs exhibit relatively strong relationships meriting closer inspection. By placing heterogeneous associations on a common scale (often \\([0, 1]\\)), analysts can scan large multivariate datasets and focus attention on the most informative relationships, regardless of variable type. This pragmatic, unified treatment transforms a fragmented set of statistical tools into a coherent exploratory framework.\n\n\n1.4.5 Network Representations\nWhen a dataset contains dozens or hundreds of variables, even a well-chosen association measure produces an overwhelming matrix of pairwise relationships. Network-based representations address this scalability challenge by encoding associations as variable networks where nodes represent variables and edges represent relationships exceeding a chosen threshold. Edge weights or colors encode association magnitudes, while network layouts position variables spatially such that strongly related variables cluster near each other. This spatial organization renders high-dimensional association structure visible and interpretable at a glance. Beyond individual associations, network analysis reveals global structure: communities of tightly interconnected variables that may represent distinct domains or latent constructs, hub variables that bridge multiple domains, and peripheral variables carrying unique information. Centrality measures (degree, betweenness, eigenvector) identify influential variables. Community detection algorithms partition variables into meaningful groups. These higher-order network properties are difficult to discern from association matrices or pairwise plots alone, yet they often provide crucial insights into data structure. Network representations therefore serve as a cognitive map of the dataset, guiding exploratory analysis through high-dimensional association space.\n\n\n1.4.6 Interactive Visual Analytics\nStatic visualizations answer pre-determined questions; interactive tools enable dynamic exploration. Interactive graphics—particularly Shiny applications—allow analysts to filter data by conditions, aggregate across subgroups, adjust plot parameters, and link multiple views in real time. This interactivity supports hypothesis generation and refinement: analysts can test “what if” scenarios, drill down into subpopulations, and detect patterns that might not appear in static plots. Dashboards combine multiple interactive visualizations into coordinated workflows, allowing stakeholders to explore data according to their own questions rather than passively receiving predetermined findings. For descriptive analysis in particular, interactivity is essential for handling high-dimensional data. An interactive tool can present association networks, tree structures, and distributions while allowing users to focus on subsets, time periods, or demographic groups of interest. This chapter introduces Shiny-based applications and demonstrates how to build interactive descriptive tools that scale to real-world data complexity.",
-    "crumbs": [
-      "Foundations",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
-    ]
-  },
-  {
-    "objectID": "intro.html#the-associationexplorer-tool",
-    "href": "intro.html#the-associationexplorer-tool",
-    "title": "1  Introduction",
-    "section": "1.5 The AssociationExplorer Tool",
-    "text": "1.5 The AssociationExplorer Tool\nA recurring example throughout this book is the AssociationExplorer Shiny application, developed as part of the research underlying this work. AssociationExplorer integrates multiple descriptive methods into a unified interface, allowing users to:\n\nUpload tabular datasets\nCompute association measures for mixed-type variables\nVisualize associations as networks with customizable layouts\nApply tree-based methods to understand variable relationships\nExport results for further analysis or reporting\n\nWhile the methods in this book can be implemented in any statistical software, AssociationExplorer provides a practical implementation that readers can use immediately.",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
