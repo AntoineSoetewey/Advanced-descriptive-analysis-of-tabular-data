@@ -12,7 +12,7 @@ book:
     
     - part: "Foundations"
       chapters:
-        - intro.qmd
+        - chapter-00-introduction.qmd
         - chapter-01-beyond-basic-descriptives.qmd
         - chapter-02-data-types-associations.qmd
     
@@ -52,7 +52,7 @@ book:
         - chapter-19-case-study-health.qmd
         - chapter-20-case-study-business.qmd
     
-    - summary.qmd
+    - chapter-21-conclusion.qmd
     - references.qmd
   search: true
   repo-url: https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data

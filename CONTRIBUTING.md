@@ -220,7 +220,7 @@ For lower priority items, please open an issue for discussion before investing t
 
 If you have questions about contributing:
 
-- Open an issue labeled "question", or start a discussion
+- Open an [issue](https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/issues) labeled "question", or start a [discussion](https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/discussions)
 - Check existing issues and pull requests for similar discussions
 
 ## License
