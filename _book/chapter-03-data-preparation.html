@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>19&nbsp; Case Study—Public Policy and Program Evaluation – Advanced Descriptive Analysis of Tabular Data</title>
+<title>4&nbsp; Data Preparation for Descriptive Analysis – Advanced Descriptive Analysis of Tabular Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter-19-case-study-health.html" rel="next">
-<link href="./chapter-17-communication-visualization.html" rel="prev">
+<link href="./chapter-04-association-measures.html" rel="next">
+<link href="./chapter-02-data-types-associations.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-18-case-study-policy.html">Applied Case Studies</a></li><li class="breadcrumb-item"><a href="./chapter-18-case-study-policy.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Case Study—Public Policy and Program Evaluation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-00-introduction.html">Foundations</a></li><li class="breadcrumb-item"><a href="./chapter-03-data-preparation.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Preparation for Descriptive Analysis</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -190,12 +190,18 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Types and Association Measures</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-03-data-preparation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Preparation for Descriptive Analysis</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Tree-Based Methods for Description</span></a>
+ <span class="menu-text">Association Analysis</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -203,20 +209,20 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-03-regression-trees.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Regression Trees for Exploratory Segmentation</span></span></a>
+  <a href="./chapter-04-association-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Unified Association Measures for Mixed-Type Variables</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-04-classification-trees.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Classification Trees and Confusion Matrix Insights</span></span></a>
+  <a href="./chapter-05-correlation-extensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extensions of Correlation—Nonlinear and Conditional</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-05-ensemble-methods-description.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ensemble Methods as Descriptive Instruments</span></span></a>
+  <a href="./chapter-06-network-representations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Network-Based Representations of Associations</span></span></a>
   </div>
 </li>
       </ul>
@@ -224,7 +230,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Interpretable Machine Learning</span></a>
+ <span class="menu-text">Interactive Visual Analytics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -232,26 +238,20 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-06-interpretable-ml-overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Interpretable ML—An Overview</span></span></a>
+  <a href="./chapter-07-shiny-exploration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Principles of Interactive Exploration</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-07-feature-importance.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Feature Importance and Variable Selection</span></span></a>
+  <a href="./chapter-08-association-explorer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The AssociationExplorer Application</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-08-partial-dependence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Partial Dependence and Individual Conditional Expectation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-09-shapley-values.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shapley Values and Additive Explanations</span></span></a>
+  <a href="./chapter-09-communication-visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Communicating Findings Through Visualization</span></span></a>
   </div>
 </li>
       </ul>
@@ -259,7 +259,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">AutoML for Exploration</span></a>
+ <span class="menu-text">Tree-Based Methods for Description</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -267,14 +267,20 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-10-automl-descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">AutoML as a Descriptive Tool</span></span></a>
+  <a href="./chapter-10-regression-trees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Regression Trees for Exploratory Segmentation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-11-automated-feature-engineering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Automated Feature Engineering and Interaction Discovery</span></span></a>
+  <a href="./chapter-11-classification-trees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Classification Trees and Confusion Matrix Insights</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-12-ensemble-methods-description.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Ensemble Methods as Descriptive Instruments</span></span></a>
   </div>
 </li>
       </ul>
@@ -282,7 +288,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Association Analysis</span></a>
+ <span class="menu-text">Interpretable Machine Learning</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -290,20 +296,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-12-association-measures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Unified Association Measures for Mixed-Type Variables</span></span></a>
+  <a href="./chapter-13-interpretable-ml-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Interpretable ML—An Overview</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-13-correlation-extensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Extensions of Correlation—Nonlinear and Conditional</span></span></a>
+  <a href="./chapter-14-feature-importance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Feature Importance and Variable Selection</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-14-network-representations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Network-Based Representations of Associations</span></span></a>
+  <a href="./chapter-15-partial-dependence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Partial Dependence and Individual Conditional Expectation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-16-shapley-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Shapley Values and Additive Explanations</span></span></a>
   </div>
 </li>
       </ul>
@@ -311,7 +323,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Interactive Visual Analytics</span></a>
+ <span class="menu-text">AutoML for Exploration</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -319,20 +331,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-15-shiny-exploration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Principles of Interactive Exploration</span></span></a>
+  <a href="./chapter-17-automl-descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">AutoML as a Descriptive Tool</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-16-association-explorer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">The AssociationExplorer Application</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-17-communication-visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Communicating Findings Through Visualization</span></span></a>
+  <a href="./chapter-18-automated-feature-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Automated Feature Engineering and Interaction Discovery</span></span></a>
   </div>
 </li>
       </ul>
@@ -348,28 +354,28 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-18-case-study-policy.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Case Study—Public Policy and Program Evaluation</span></span></a>
+  <a href="./chapter-19-case-study-policy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Case Study—Public Policy and Program Evaluation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-19-case-study-health.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Case Study—Public Health and Epidemiological Data</span></span></a>
+  <a href="./chapter-20-case-study-health.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Case Study—Public Health and Epidemiological Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-20-case-study-business.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Case Study—Business Analytics and Customer Insights</span></span></a>
+  <a href="./chapter-21-case-study-business.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Case Study—Business Analytics and Customer Insights</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-21-conclusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
+  <a href="./chapter-22-conclusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -383,15 +389,41 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#understanding-variables-and-metadata" id="toc-understanding-variables-and-metadata" class="nav-link active" data-scroll-target="#understanding-variables-and-metadata"><span class="header-section-number">4.1</span> 3.1 Understanding Variables and Metadata</a>
+  <ul class="collapse">
+  <li><a href="#goals" id="toc-goals" class="nav-link" data-scroll-target="#goals"><span class="header-section-number">4.1.1</span> Goals</a></li>
+  <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics"><span class="header-section-number">4.1.2</span> Topics</a></li>
+  </ul></li>
+  <li><a href="#cleaning-harmonization-and-quality-checks" id="toc-cleaning-harmonization-and-quality-checks" class="nav-link" data-scroll-target="#cleaning-harmonization-and-quality-checks"><span class="header-section-number">4.2</span> 3.2 Cleaning, Harmonization, and Quality Checks</a>
+  <ul class="collapse">
+  <li><a href="#goals-1" id="toc-goals-1" class="nav-link" data-scroll-target="#goals-1"><span class="header-section-number">4.2.1</span> Goals</a></li>
+  <li><a href="#topics-1" id="toc-topics-1" class="nav-link" data-scroll-target="#topics-1"><span class="header-section-number">4.2.2</span> Topics</a></li>
+  </ul></li>
+  <li><a href="#feature-construction-for-descriptive-insight" id="toc-feature-construction-for-descriptive-insight" class="nav-link" data-scroll-target="#feature-construction-for-descriptive-insight"><span class="header-section-number">4.3</span> 3.3 Feature Construction for Descriptive Insight</a>
+  <ul class="collapse">
+  <li><a href="#goals-2" id="toc-goals-2" class="nav-link" data-scroll-target="#goals-2"><span class="header-section-number">4.3.1</span> Goals</a></li>
+  <li><a href="#topics-2" id="toc-topics-2" class="nav-link" data-scroll-target="#topics-2"><span class="header-section-number">4.3.2</span> Topics</a></li>
+  </ul></li>
+  <li><a href="#reproducible-preparation-pipelines" id="toc-reproducible-preparation-pipelines" class="nav-link" data-scroll-target="#reproducible-preparation-pipelines"><span class="header-section-number">4.4</span> 3.4 Reproducible Preparation Pipelines</a>
+  <ul class="collapse">
+  <li><a href="#goals-3" id="toc-goals-3" class="nav-link" data-scroll-target="#goals-3"><span class="header-section-number">4.4.1</span> Goals</a></li>
+  <li><a href="#topics-3" id="toc-topics-3" class="nav-link" data-scroll-target="#topics-3"><span class="header-section-number">4.4.2</span> Topics</a></li>
+  </ul></li>
+  <li><a href="#applied-example-preparing-a-mixed-type-dataset" id="toc-applied-example-preparing-a-mixed-type-dataset" class="nav-link" data-scroll-target="#applied-example-preparing-a-mixed-type-dataset"><span class="header-section-number">4.5</span> 3.5 Applied Example: Preparing a Mixed-Type Dataset</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/edit/main/chapter-03-data-preparation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/blob/main/chapter-03-data-preparation.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-18-case-study-policy.html">Applied Case Studies</a></li><li class="breadcrumb-item"><a href="./chapter-18-case-study-policy.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Case Study—Public Policy and Program Evaluation</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-00-introduction.html">Foundations</a></li><li class="breadcrumb-item"><a href="./chapter-03-data-preparation.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Preparation for Descriptive Analysis</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Case Study—Public Policy and Program Evaluation</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Preparation for Descriptive Analysis</span></h1>
 </div>
 
 
@@ -408,8 +440,96 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Descriptive analysis is only as reliable as the data that feed it. Before measuring associations or building models, analysts must understand variable definitions, clean inconsistencies, and construct analysis-ready tables. This chapter introduces practical workflows for preparing messy real-world data so that later descriptive methods are interpretable, reproducible, and trustworthy.</p>
+<section id="understanding-variables-and-metadata" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="understanding-variables-and-metadata"><span class="header-section-number">4.1</span> 3.1 Understanding Variables and Metadata</h2>
+<section id="goals" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="goals"><span class="header-section-number">4.1.1</span> Goals</h3>
+<ul>
+<li>Clarify variable meaning, units, and coding schemes</li>
+<li>Detect ambiguous or inconsistent definitions across sources</li>
+<li>Document assumptions and transformations for reproducibility</li>
+</ul>
+</section>
+<section id="topics" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="topics"><span class="header-section-number">4.1.2</span> Topics</h3>
+<ul>
+<li>Data dictionaries and codebooks</li>
+<li>Units, scales, and measurement error</li>
+<li>Categorical coding (ordered vs.&nbsp;nominal)</li>
+<li>Time and panel identifiers</li>
+<li>Provenance and data lineage</li>
+</ul>
+</section>
+</section>
+<section id="cleaning-harmonization-and-quality-checks" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="cleaning-harmonization-and-quality-checks"><span class="header-section-number">4.2</span> 3.2 Cleaning, Harmonization, and Quality Checks</h2>
+<section id="goals-1" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="goals-1"><span class="header-section-number">4.2.1</span> Goals</h3>
+<ul>
+<li>Identify errors, missingness, and outliers</li>
+<li>Harmonize variables across files or time periods</li>
+<li>Apply minimal, transparent corrections</li>
+</ul>
+</section>
+<section id="topics-1" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="topics-1"><span class="header-section-number">4.2.2</span> Topics</h3>
+<ul>
+<li>Missing data patterns and reporting</li>
+<li>Range checks and logical constraints</li>
+<li>Duplicate records and entity resolution</li>
+<li>Standardizing categories and labels</li>
+<li>Dealing with inconsistent time formats</li>
+</ul>
+</section>
+</section>
+<section id="feature-construction-for-descriptive-insight" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="feature-construction-for-descriptive-insight"><span class="header-section-number">4.3</span> 3.3 Feature Construction for Descriptive Insight</h2>
+<section id="goals-2" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="goals-2"><span class="header-section-number">4.3.1</span> Goals</h3>
+<ul>
+<li>Create interpretable derived variables</li>
+<li>Encode variables for mixed-type association measures</li>
+<li>Preserve interpretability while enabling analysis</li>
+</ul>
+</section>
+<section id="topics-2" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="topics-2"><span class="header-section-number">4.3.2</span> Topics</h3>
+<ul>
+<li>Binning and discretization (with justification)</li>
+<li>Ratios, rates, and per-capita measures</li>
+<li>Index construction and composite measures</li>
+<li>Normalization and scaling choices</li>
+<li>Audit trails for transformations</li>
+</ul>
+</section>
+</section>
+<section id="reproducible-preparation-pipelines" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="reproducible-preparation-pipelines"><span class="header-section-number">4.4</span> 3.4 Reproducible Preparation Pipelines</h2>
+<section id="goals-3" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="goals-3"><span class="header-section-number">4.4.1</span> Goals</h3>
+<ul>
+<li>Make preparation steps transparent and repeatable</li>
+<li>Separate raw, intermediate, and analysis-ready data</li>
+<li>Facilitate collaboration and review</li>
+</ul>
+</section>
+<section id="topics-3" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="topics-3"><span class="header-section-number">4.4.2</span> Topics</h3>
+<ul>
+<li>Scripted pipelines vs.&nbsp;manual edits</li>
+<li>Versioning datasets and metadata</li>
+<li>Validation checks as code</li>
+<li>Summary reports for prepared datasets</li>
+</ul>
+</section>
+</section>
+<section id="applied-example-preparing-a-mixed-type-dataset" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="applied-example-preparing-a-mixed-type-dataset"><span class="header-section-number">4.5</span> 3.5 Applied Example: Preparing a Mixed-Type Dataset</h2>
+<p>A brief walkthrough demonstrates how a raw survey dataset is transformed into an analysis-ready table with clear variable definitions, cleaned categories, and documented transformations. The focus is on traceability: every transformation is explained, and the resulting dataset is ready for association analysis and visual exploration.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -814,13 +934,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-17-communication-visualization.html" class="pagination-link" aria-label="Communicating Findings Through Visualization">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Communicating Findings Through Visualization</span></span>
+      <a href="./chapter-02-data-types-associations.html" class="pagination-link" aria-label="Data Types and Association Measures">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Types and Association Measures</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-19-case-study-health.html" class="pagination-link" aria-label="Case Study—Public Health and Epidemiological Data">
-        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Case Study—Public Health and Epidemiological Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-04-association-measures.html" class="pagination-link" aria-label="Unified Association Measures for Mixed-Type Variables">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Unified Association Measures for Mixed-Type Variables</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -829,4 +949,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/edit/main/chapter-18-case-study-policy.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/blob/main/chapter-18-case-study-policy.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/edit/main/chapter-03-data-preparation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/blob/main/chapter-03-data-preparation.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>

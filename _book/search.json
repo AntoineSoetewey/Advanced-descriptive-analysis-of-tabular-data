@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Advanced Descriptive Analysis of Tabular Data",
     "section": "",
-    "text": "Preface\nDescriptive statistics are often treated as a preliminary step—a routine box to check before moving on to inference, prediction, or causal analysis. Yet in practice, understanding the structure, associations, and patterns within complex tabular data is neither trivial nor purely mechanical. It requires sophisticated methods, thoughtful visualization, and clear communication.\nThis book synthesizes advanced techniques for descriptive analysis of tabular data, drawing on recent developments in machine learning, network analysis, and interactive visualization. Our goal is to equip researchers, analysts, policymakers, and data journalists with tools that go beyond means and standard deviations, enabling them to extract actionable insights from multivariate datasets.\nThe material presented here emerged from postdoctoral research at the intersection of applied statistics, machine learning, and data visualization. It reflects a pragmatic philosophy: methods should be interpretable, visual, and suitable for communicating findings to statistically literate but non-technical audiences.",
+    "text": "Preface\nDescriptive statistics are often treated as a preliminary step—a routine box to check before moving on to inference, prediction, or causal analysis. Yet in practice, understanding the structure, associations, and patterns within complex tabular data is neither trivial nor purely mechanical. It requires sophisticated methods, thoughtful visualization, and clear communication.\nThis book synthesizes advanced techniques for descriptive analysis of tabular data, drawing on recent developments in machine learning, network analysis, and interactive visualization. Our goal is to equip researchers, analysts, policymakers, and data journalists with tools that go beyond means and standard deviations, enabling them to extract actionable insights from multivariate datasets.\nThe methods and tools presented here are not a repackaging of standard EDA. They reflect original methodological syntheses, implementation choices, and applied workflows developed through research and field practice. In that sense, this book also serves as a portfolio: a concrete, citable body of work that demonstrates innovation in descriptive analytics and foregrounds substantive methodological originality.\nThe material presented here emerged from postdoctoral research at the intersection of applied statistics, machine learning, and data visualization. It reflects a pragmatic philosophy: methods should be interpretable, visual, and suitable for communicating findings to statistically literate but non-technical audiences.",
     "crumbs": [
       "Preface"
     ]
@@ -34,7 +34,7 @@
     "href": "index.html#structure-of-the-book",
     "title": "Advanced Descriptive Analysis of Tabular Data",
     "section": "Structure of the Book",
-    "text": "Structure of the Book\nThe book is organized into seven parts:\nPart I: Foundations establishes the conceptual framework, revisiting what it means to “describe” data and introducing the challenge of mixed-type variables and multivariate associations.\nParts II–IV present three families of advanced methods: tree-based models for segmentation and description, interpretable machine learning techniques for understanding complex patterns, and AutoML approaches that automate exploration.\nPart V focuses specifically on association analysis—measuring relationships between variables of different types and representing these associations as networks.\nPart VI introduces interactive visual analytics, including the AssociationExplorer Shiny application, which integrates many of the methods presented earlier into a unified exploratory interface.\nPart VII presents extended applied case studies from policy analysis, public health, and business analytics, demonstrating how these methods solve real-world problems.",
+    "text": "Structure of the Book\nThe book is organized into seven parts:\nPart I: Foundations establishes the conceptual framework, revisiting what it means to “describe” data and introducing the challenge of mixed-type variables and multivariate associations.\nPart II focuses on association analysis—measuring relationships between pairs of variables of different types and representing these associations as networks.\nPart III introduces interactive visual analytics, including the AssociationExplorer Shiny application, which operationalizes association-focused methods in a unified exploratory interface.\nParts IV–VI present three families of advanced methods for higher-dimensional structure: tree-based models for segmentation and description, interpretable machine learning techniques for understanding complex patterns, and AutoML approaches that automate exploration.\nPart VII presents extended applied case studies from policy analysis, public health, and business analytics, demonstrating how these methods solve real-world problems.",
     "crumbs": [
       "Preface"
     ]
@@ -74,7 +74,7 @@
     "href": "chapter-00-introduction.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "1.1 The Challenge of Describing Complex Data\nWhen confronted with a dataset containing dozens or hundreds of variables—mixing continuous measurements, categorical indicators, ordinal scales, and binary flags—how do we make sense of it? How do we identify the most important patterns, detect unexpected associations, and communicate our findings effectively?\nTraditional descriptive statistics (means, medians, frequency tables, correlation matrices) remain essential, but they quickly become insufficient as data complexity grows. A correlation matrix for 50 variables contains 1,225 pairwise relationships, most of which are noise. Standard summary statistics provide no guidance on which variables matter most, how they interact, or what segments or subpopulations might exist in the data.\nThis book addresses the challenge of advanced descriptive analysis: moving beyond elementary summaries to extract meaningful structure from complex tabular data.",
+    "text": "1.1 The Challenge of Describing Complex Data\nWhen confronted with a dataset containing dozens or hundreds of variables—mixing continuous measurements, categorical indicators, ordinal scales, and binary flags—how do we make sense of it? How do we identify the most important patterns, detect unexpected associations, and communicate our findings effectively?\nTraditional descriptive statistics (means, medians, frequency tables, correlation matrices) remain essential, but they quickly become insufficient as data complexity grows. A correlation matrix for 50 variables contains 1,225 pairwise relationships, most of which are noise. Standard summary statistics provide no guidance on which variables matter most, how they interact, or what segments or subpopulations might exist in the data.\nThis book addresses the challenge of advanced descriptive analysis: moving beyond elementary summaries to extract meaningful structure from complex tabular data. It is intentionally positioned as an original methodological portfolio—combining novel syntheses, practical tooling, and reproducible workflows that evidence substantive methodological originality.",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
@@ -118,7 +118,7 @@
     "href": "chapter-00-introduction.html#real-world-applications",
     "title": "1  Introduction",
     "section": "1.5 Real-World Applications",
-    "text": "1.5 Real-World Applications\nEach method is illustrated with applied examples drawn from:\n\nPublic policy: understanding determinants of program participation, analyzing survey data on citizen attitudes\nPublic health: exploring risk factors in epidemiological data, characterizing patient populations\nBusiness analytics: segmenting customers, identifying drivers of satisfaction or churn\nSocial science research: analyzing survey responses, detecting patterns in observational data\nData journalism: investigating patterns in government data, economic indicators, or social trends\n\nThroughout the book, these methods are implemented in R and demonstrated on real datasets. A recurring example is the AssociationExplorer Shiny application, developed as part of the research underlying this work, which integrates multiple descriptive techniques into a unified interactive interface. While all methods can be implemented using standard statistical software, AssociationExplorer provides a practical tool for immediate exploratory use. These examples demonstrate that advanced descriptive methods are not academic exercises—they solve genuine problems faced by analysts across diverse fields.",
+    "text": "1.5 Real-World Applications\nEach method is illustrated with applied examples drawn from:\n\nPublic policy: understanding determinants of program participation, analyzing survey data on citizen attitudes\nPublic health: exploring risk factors in epidemiological data, characterizing patient populations\nBusiness analytics: segmenting customers, identifying drivers of satisfaction or churn\nSocial science research: analyzing survey responses, detecting patterns in observational data\nData journalism: investigating patterns in government data, economic indicators, or social trends\n\nThroughout the book, these methods are implemented in R and demonstrated on real datasets. A recurring example is the AssociationExplorer Shiny application, developed as part of the research underlying this work, which integrates multiple descriptive techniques into a unified interactive interface. While all methods can be implemented using standard statistical software, AssociationExplorer provides a practical tool for immediate exploratory use. These examples demonstrate that advanced descriptive methods are not academic exercises—they solve genuine problems faced by analysts across diverse fields and showcase original contributions.",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
@@ -140,7 +140,7 @@
     "href": "chapter-00-introduction.html#structure-and-learning-path",
     "title": "1  Introduction",
     "section": "1.7 Structure and Learning Path",
-    "text": "1.7 Structure and Learning Path\nThe book proceeds from foundations to applications:\n\nChapters 1–2 establish conceptual groundwork and introduce the challenge of mixed-type data\nChapters 3–11 present three families of advanced methods (trees, interpretable ML, AutoML)\nChapters 12–14 focus on association measures and network representations\nChapters 15–17 introduce interactive visual analytics\nChapters 18–20 present extended applied case studies\n\nReaders can follow a linear path or jump to chapters matching their immediate needs. Code examples and exercises throughout encourage hands-on practice.",
+    "text": "1.7 Structure and Learning Path\nThe book proceeds from foundations to applications:\n\nChapters 1–3 establish conceptual groundwork, mixed-type data challenges, and data preparation\nChapters 4–6 focus on association measures and network representations\nChapters 7–9 introduce interactive visual analytics\nChapters 10–18 present three families of advanced methods (trees, interpretable ML, AutoML)\nChapters 19–21 present extended applied case studies\n\nReaders can follow a linear path or jump to chapters matching their immediate needs. Code examples and exercises throughout encourage hands-on practice.",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
@@ -166,6 +166,72 @@
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-03-data-preparation.html",
+    "href": "chapter-03-data-preparation.html",
+    "title": "4  Data Preparation for Descriptive Analysis",
+    "section": "",
+    "text": "4.1 3.1 Understanding Variables and Metadata\nDescriptive analysis is only as reliable as the data that feed it. Before measuring associations or building models, analysts must understand variable definitions, clean inconsistencies, and construct analysis-ready tables. This chapter introduces practical workflows for preparing messy real-world data so that later descriptive methods are interpretable, reproducible, and trustworthy.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-03-data-preparation.html#understanding-variables-and-metadata",
+    "href": "chapter-03-data-preparation.html#understanding-variables-and-metadata",
+    "title": "4  Data Preparation for Descriptive Analysis",
+    "section": "",
+    "text": "4.1.1 Goals\n\nClarify variable meaning, units, and coding schemes\nDetect ambiguous or inconsistent definitions across sources\nDocument assumptions and transformations for reproducibility\n\n\n\n4.1.2 Topics\n\nData dictionaries and codebooks\nUnits, scales, and measurement error\nCategorical coding (ordered vs. nominal)\nTime and panel identifiers\nProvenance and data lineage",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-03-data-preparation.html#cleaning-harmonization-and-quality-checks",
+    "href": "chapter-03-data-preparation.html#cleaning-harmonization-and-quality-checks",
+    "title": "4  Data Preparation for Descriptive Analysis",
+    "section": "4.2 3.2 Cleaning, Harmonization, and Quality Checks",
+    "text": "4.2 3.2 Cleaning, Harmonization, and Quality Checks\n\n4.2.1 Goals\n\nIdentify errors, missingness, and outliers\nHarmonize variables across files or time periods\nApply minimal, transparent corrections\n\n\n\n4.2.2 Topics\n\nMissing data patterns and reporting\nRange checks and logical constraints\nDuplicate records and entity resolution\nStandardizing categories and labels\nDealing with inconsistent time formats",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-03-data-preparation.html#feature-construction-for-descriptive-insight",
+    "href": "chapter-03-data-preparation.html#feature-construction-for-descriptive-insight",
+    "title": "4  Data Preparation for Descriptive Analysis",
+    "section": "4.3 3.3 Feature Construction for Descriptive Insight",
+    "text": "4.3 3.3 Feature Construction for Descriptive Insight\n\n4.3.1 Goals\n\nCreate interpretable derived variables\nEncode variables for mixed-type association measures\nPreserve interpretability while enabling analysis\n\n\n\n4.3.2 Topics\n\nBinning and discretization (with justification)\nRatios, rates, and per-capita measures\nIndex construction and composite measures\nNormalization and scaling choices\nAudit trails for transformations",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-03-data-preparation.html#reproducible-preparation-pipelines",
+    "href": "chapter-03-data-preparation.html#reproducible-preparation-pipelines",
+    "title": "4  Data Preparation for Descriptive Analysis",
+    "section": "4.4 3.4 Reproducible Preparation Pipelines",
+    "text": "4.4 3.4 Reproducible Preparation Pipelines\n\n4.4.1 Goals\n\nMake preparation steps transparent and repeatable\nSeparate raw, intermediate, and analysis-ready data\nFacilitate collaboration and review\n\n\n\n4.4.2 Topics\n\nScripted pipelines vs. manual edits\nVersioning datasets and metadata\nValidation checks as code\nSummary reports for prepared datasets",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-03-data-preparation.html#applied-example-preparing-a-mixed-type-dataset",
+    "href": "chapter-03-data-preparation.html#applied-example-preparing-a-mixed-type-dataset",
+    "title": "4  Data Preparation for Descriptive Analysis",
+    "section": "4.5 3.5 Applied Example: Preparing a Mixed-Type Dataset",
+    "text": "4.5 3.5 Applied Example: Preparing a Mixed-Type Dataset\nA brief walkthrough demonstrates how a raw survey dataset is transformed into an analysis-ready table with clear variable definitions, cleaned categories, and documented transformations. The focus is on traceability: every transformation is explained, and the resulting dataset is ready for association analysis and visual exploration.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
     ]
   }
 ]
