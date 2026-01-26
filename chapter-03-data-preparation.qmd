@@ -1,0 +1,70 @@
+# Data Preparation for Descriptive Analysis
+
+Descriptive analysis is only as reliable as the data that feed it. Before measuring associations or building models, analysts must understand variable definitions, clean inconsistencies, and construct analysis-ready tables. This chapter introduces practical workflows for preparing messy real-world data so that later descriptive methods are interpretable, reproducible, and trustworthy.
+
+## 3.1 Understanding Variables and Metadata
+
+### Goals
+
+- Clarify variable meaning, units, and coding schemes
+- Detect ambiguous or inconsistent definitions across sources
+- Document assumptions and transformations for reproducibility
+
+### Topics
+
+- Data dictionaries and codebooks
+- Units, scales, and measurement error
+- Categorical coding (ordered vs. nominal)
+- Time and panel identifiers
+- Provenance and data lineage
+
+## 3.2 Cleaning, Harmonization, and Quality Checks
+
+### Goals
+
+- Identify errors, missingness, and outliers
+- Harmonize variables across files or time periods
+- Apply minimal, transparent corrections
+
+### Topics
+
+- Missing data patterns and reporting
+- Range checks and logical constraints
+- Duplicate records and entity resolution
+- Standardizing categories and labels
+- Dealing with inconsistent time formats
+
+## 3.3 Feature Construction for Descriptive Insight
+
+### Goals
+
+- Create interpretable derived variables
+- Encode variables for mixed-type association measures
+- Preserve interpretability while enabling analysis
+
+### Topics
+
+- Binning and discretization (with justification)
+- Ratios, rates, and per-capita measures
+- Index construction and composite measures
+- Normalization and scaling choices
+- Audit trails for transformations
+
+## 3.4 Reproducible Preparation Pipelines
+
+### Goals
+
+- Make preparation steps transparent and repeatable
+- Separate raw, intermediate, and analysis-ready data
+- Facilitate collaboration and review
+
+### Topics
+
+- Scripted pipelines vs. manual edits
+- Versioning datasets and metadata
+- Validation checks as code
+- Summary reports for prepared datasets
+
+## 3.5 Applied Example: Preparing a Mixed-Type Dataset
+
+A brief walkthrough demonstrates how a raw survey dataset is transformed into an analysis-ready table with clear variable definitions, cleaned categories, and documented transformations. The focus is on traceability: every transformation is explained, and the resulting dataset is ready for association analysis and visual exploration.

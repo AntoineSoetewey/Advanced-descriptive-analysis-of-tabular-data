@@ -37,9 +37,24 @@
 **Potential Datasets**: - NHANES (National Health and Nutrition Examination Survey) - PISA educational assessment data - European Social Survey
 
 ------------------------------------------------------------------------
+
+
+### Chapter 3: Data Preparation for Descriptive Analysis
+
+**Goals**: - Emphasize why data preparation is essential for credible descriptive analysis - Provide a workflow for understanding variables, cleaning inconsistencies, and documenting transformations - Establish reproducible preparation pipelines that support later association and modeling steps
+
+**Key Methods**: - Reviewing codebooks and variable definitions - Missing data diagnostics and reporting - Consistency checks, range validation, and outlier review - Harmonizing categories and units across sources - Feature construction for interpretability (binning, rates, indices)
+
+**Applied Value**: Ensures that descriptive findings reflect the data generating process rather than artifacts of poor preparation. Strengthens interpretability, reproducibility, and collaboration by making preprocessing decisions explicit.
+
+**Suggested Examples**: - **Survey harmonization**: Aligning response categories across survey waves - **Administrative data cleanup**: Resolving duplicates and inconsistent IDs across files - **Health dataset preparation**: Converting raw lab values into standardized clinical indicators
+
+**Potential Datasets**: - Repeated cross-sectional surveys (GSS, ESS) - Administrative program data (with duplicates and missingness) - Public health registries with mixed variable types
+
+------------------------------------------------------------------------
 ## PART II: ASSOCIATION ANALYSIS
 
-### Chapter 3: Unified Association Measures for Mixed-Type Variables
+### Chapter 4: Unified Association Measures for Mixed-Type Variables
 
 **Goals**: - Present a unified framework for measuring association across variable types - Compare classical measures (Pearson, Spearman, Cramér's V) with modern alternatives (distance correlation, MIC) - Provide practical guidance on choosing measures based on data properties and research questions
 
@@ -53,7 +68,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 4: Extensions of Correlation—Nonlinear and Conditional
+### Chapter 5: Extensions of Correlation—Nonlinear and Conditional
 
 **Goals**: - Move beyond linear correlation to capture nonlinear and conditional associations - Introduce copula-based dependence measures - Discuss conditional independence and graphical models
 
@@ -67,7 +82,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 5: Network-Based Representations of Associations
+### Chapter 6: Network-Based Representations of Associations
 
 **Goals**: - Represent multivariate association structures as networks - Introduce network layouts, centrality measures, and community detection - Apply network analysis to discover higher-order structure in data
 
@@ -82,7 +97,7 @@
 ------------------------------------------------------------------------
 ## PART III: INTERACTIVE VISUAL ANALYTICS
 
-### Chapter 6: Principles of Interactive Exploration
+### Chapter 7: Principles of Interactive Exploration
 
 **Goals**: - Articulate the value of interactivity in exploratory analysis - Introduce design principles for interactive visualizations - Discuss the role of dashboards and applications vs. static reports
 
@@ -96,7 +111,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 7: The AssociationExplorer Application
+### Chapter 8: The AssociationExplorer Application
 
 **Goals**: - Provide a detailed walkthrough of the AssociationExplorer Shiny app - Demonstrate its use on a real dataset - Discuss how it integrates multiple methods from earlier chapters
 
@@ -110,7 +125,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 8: Communicating Findings Through Visualization
+### Chapter 9: Communicating Findings Through Visualization
 
 **Goals**: - Discuss best practices for visual communication of descriptive results - Address common pitfalls (misleading axes, over-plotting, chart junk) - Introduce principles of storytelling with data
 
@@ -125,7 +140,7 @@
 ------------------------------------------------------------------------
 ## PART IV: TREE-BASED METHODS FOR DESCRIPTION
 
-### Chapter 9: Regression Trees for Exploratory Segmentation
+### Chapter 10: Regression Trees for Exploratory Segmentation
 
 **Goals**: - Introduce regression trees as descriptive tools for identifying subpopulations - Emphasize interpretation of tree rules and terminal node characteristics - Discuss tree pruning and complexity-accuracy trade-offs from a descriptive perspective
 
@@ -139,7 +154,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 10: Classification Trees and Confusion Matrix Insights
+### Chapter 11: Classification Trees and Confusion Matrix Insights
 
 **Goals**: - Extend tree-based methods to categorical outcomes - Use classification trees to understand which features best discriminate between classes - Interpret confusion matrices and class-specific performance descriptively
 
@@ -153,7 +168,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 11: Ensemble Methods as Descriptive Instruments
+### Chapter 12: Ensemble Methods as Descriptive Instruments
 
 **Goals**: - Show how ensemble methods (random forests, boosting) can be used descriptively - Extract feature importance and partial dependence from ensemble models - Balance accuracy and interpretability
 
@@ -168,7 +183,7 @@
 ------------------------------------------------------------------------
 ## PART V: INTERPRETABLE MACHINE LEARNING
 
-### Chapter 12: Interpretable ML—An Overview
+### Chapter 13: Interpretable ML—An Overview
 
 **Goals**: - Introduce the paradigm of using ML models for description rather than prediction - Distinguish between intrinsically interpretable models and post-hoc interpretation methods - Motivate interpretable ML as a bridge between predictive accuracy and human understanding
 
@@ -182,7 +197,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 13: Feature Importance and Variable Selection
+### Chapter 14: Feature Importance and Variable Selection
 
 **Goals**: - Systematically compare feature importance measures across model types - Discuss permutation importance, SHAP-based importance, and gain-based importance - Guide practitioners in choosing and interpreting importance measures
 
@@ -196,7 +211,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 14: Partial Dependence and Individual Conditional Expectation
+### Chapter 15: Partial Dependence and Individual Conditional Expectation
 
 **Goals**: - Introduce partial dependence plots (PDPs) as a tool for visualizing marginal effects - Extend to individual conditional expectation (ICE) plots to reveal heterogeneity - Discuss centered ICE plots and accumulated local effects (ALE)
 
@@ -210,7 +225,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 15: Shapley Values and Additive Explanations
+### Chapter 16: Shapley Values and Additive Explanations
 
 **Goals**: - Introduce Shapley values from cooperative game theory - Apply SHAP (SHapley Additive exPlanations) to decompose model predictions - Interpret SHAP values both globally (aggregated) and locally (individual observations)
 
@@ -225,7 +240,7 @@
 ------------------------------------------------------------------------
 ## PART VI: AUTOML FOR EXPLORATION
 
-### Chapter 16: AutoML as a Descriptive Tool
+### Chapter 17: AutoML as a Descriptive Tool
 
 **Goals**: - Reframe AutoML from a predictive to a descriptive perspective - Discuss how automated model search can identify unexpected patterns - Introduce AutoML platforms (H2O, TPOT, AutoGluon) and their descriptive use
 
@@ -239,7 +254,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 17: Automated Feature Engineering and Interaction Discovery
+### Chapter 18: Automated Feature Engineering and Interaction Discovery
 
 **Goals**: - Introduce systematic approaches to creating derived features - Discuss interaction detection and polynomial features - Balance automation with interpretability
 
@@ -254,7 +269,7 @@
 ------------------------------------------------------------------------
 ## PART VII: APPLIED CASE STUDIES
 
-### Chapter 18: Case Study—Public Policy and Program Evaluation
+### Chapter 19: Case Study—Public Policy and Program Evaluation
 
 **Goals**: - Apply multiple methods from the book to a real policy question - Demonstrate how descriptive analysis informs program design and evaluation - Discuss translation of technical findings into policy recommendations
 
@@ -268,7 +283,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 19: Case Study—Public Health and Epidemiological Data
+### Chapter 20: Case Study—Public Health and Epidemiological Data
 
 **Goals**: - Explore descriptive analysis of health data with mixed variable types - Address challenges specific to medical data (missing values, confounding, ethics) - Demonstrate interpretable ML for risk factor identification
 
@@ -282,7 +297,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 20: Case Study—Business Analytics and Customer Insights
+### Chapter 21: Case Study—Business Analytics and Customer Insights
 
 **Goals**: - Apply methods to business data: transactions, customer attributes, behavioral metrics - Demonstrate how descriptive analysis drives business decisions (segmentation, targeting, personalization) - Discuss ethical considerations in commercial data use
 
@@ -298,7 +313,7 @@
 
 ## Summary and Conclusion
 
-### Chapter 21: Summary—Integrating Methods for Exploratory Practice
+### Chapter 22: Summary—Integrating Methods for Exploratory Practice
 
 **Goals**: - Synthesize key themes and methods from the book - Provide a decision framework: which methods to use when - Discuss limitations and frontiers of descriptive analysis
 
@@ -415,7 +430,7 @@ The book reflects their postdoctoral research synthesizing advanced descriptive 
 
 ### Immediate Next Steps
 
-1.  **Chapter Drafting**: Begin with foundational chapters (1–2) and one applied case study (e.g., Chapter 18)
+1.  **Chapter Drafting**: Begin with foundational chapters (1–3) and one applied case study (e.g., Chapter 19)
 2.  **Dataset Curation**: Identify and prepare 3–5 core datasets used throughout the book
 3.  **Code Repository**: Set up GitHub repository with folder structure mirroring chapters
 4.  **Feedback**: Share early chapters with colleagues and potential users for feedback
