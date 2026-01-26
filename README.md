@@ -6,14 +6,14 @@ Comprehensive Quarto book on advanced descriptive analytics for tabular data, ai
 
 - [index.qmd](index.qmd): Preface and front matter
 - [about.qmd](about.qmd): Information about the authors
-- Foundations: [intro.qmd](intro.qmd), [chapter-01-beyond-basic-descriptives.qmd](chapter-01-beyond-basic-descriptives.qmd), [chapter-02-data-types-associations.qmd](chapter-02-data-types-associations.qmd)
-- Tree-Based Methods: [chapter-03-regression-trees.qmd](chapter-03-regression-trees.qmd), [chapter-04-classification-trees.qmd](chapter-04-classification-trees.qmd), [chapter-05-ensemble-methods-description.qmd](chapter-05-ensemble-methods-description.qmd)
-- Interpretable ML: [chapter-06-interpretable-ml-overview.qmd](chapter-06-interpretable-ml-overview.qmd), [chapter-07-feature-importance.qmd](chapter-07-feature-importance.qmd), [chapter-08-partial-dependence.qmd](chapter-08-partial-dependence.qmd), [chapter-09-shapley-values.qmd](chapter-09-shapley-values.qmd)
-- AutoML: [chapter-10-automl-descriptive.qmd](chapter-10-automl-descriptive.qmd), [chapter-11-automated-feature-engineering.qmd](chapter-11-automated-feature-engineering.qmd)
-- Association Analysis: [chapter-12-association-measures.qmd](chapter-12-association-measures.qmd), [chapter-13-correlation-extensions.qmd](chapter-13-correlation-extensions.qmd), [chapter-14-network-representations.qmd](chapter-14-network-representations.qmd)
-- Interactive Visual Analytics: [chapter-15-shiny-exploration.qmd](chapter-15-shiny-exploration.qmd), [chapter-16-association-explorer.qmd](chapter-16-association-explorer.qmd), [chapter-17-communication-visualization.qmd](chapter-17-communication-visualization.qmd)
+- Foundations: [chapter-00-introduction.qmd](chapter-00-introduction.qmd), [chapter-01-beyond-basic-descriptives.qmd](chapter-01-beyond-basic-descriptives.qmd), [chapter-02-data-types-associations.qmd](chapter-02-data-types-associations.qmd)
+- Association Analysis: [chapter-03-association-measures.qmd](chapter-03-association-measures.qmd), [chapter-04-correlation-extensions.qmd](chapter-04-correlation-extensions.qmd), [chapter-05-network-representations.qmd](chapter-05-network-representations.qmd)
+- Interactive Visual Analytics: [chapter-06-shiny-exploration.qmd](chapter-06-shiny-exploration.qmd), [chapter-07-association-explorer.qmd](chapter-07-association-explorer.qmd), [chapter-08-communication-visualization.qmd](chapter-08-communication-visualization.qmd)
+- Tree-Based Methods: [chapter-09-regression-trees.qmd](chapter-09-regression-trees.qmd), [chapter-10-classification-trees.qmd](chapter-10-classification-trees.qmd), [chapter-11-ensemble-methods-description.qmd](chapter-11-ensemble-methods-description.qmd)
+- Interpretable ML: [chapter-12-interpretable-ml-overview.qmd](chapter-12-interpretable-ml-overview.qmd), [chapter-13-feature-importance.qmd](chapter-13-feature-importance.qmd), [chapter-14-partial-dependence.qmd](chapter-14-partial-dependence.qmd), [chapter-15-shapley-values.qmd](chapter-15-shapley-values.qmd)
+- AutoML: [chapter-16-automl-descriptive.qmd](chapter-16-automl-descriptive.qmd), [chapter-17-automated-feature-engineering.qmd](chapter-17-automated-feature-engineering.qmd)
 - Case Studies: [chapter-18-case-study-policy.qmd](chapter-18-case-study-policy.qmd), [chapter-19-case-study-health.qmd](chapter-19-case-study-health.qmd), [chapter-20-case-study-business.qmd](chapter-20-case-study-business.qmd)
-- Back matter: [summary.qmd](summary.qmd), [references.qmd](references.qmd)
+- Back matter: [chapter-21-conclusion.qmd](chapter-21-conclusion.qmd), [references.qmd](references.qmd)
 - Configuration: [_quarto.yml](_quarto.yml), [references.bib](references.bib), [LICENSE](LICENSE)
 - Outputs: `_book/` (generated HTML/PDF/EPUB)
 
@@ -28,7 +28,7 @@ Comprehensive Quarto book on advanced descriptive analytics for tabular data, ai
 - Preview a single chapter (faster during drafting):
 
 	```
-	quarto preview intro.qmd
+	quarto preview chapter-00-introduction.qmd
 	```
 
 - Preview the full book (serves HTML to a local port):

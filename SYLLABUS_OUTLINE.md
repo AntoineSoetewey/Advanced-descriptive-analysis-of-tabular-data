@@ -37,142 +37,9 @@
 **Potential Datasets**: - NHANES (National Health and Nutrition Examination Survey) - PISA educational assessment data - European Social Survey
 
 ------------------------------------------------------------------------
+## PART II: ASSOCIATION ANALYSIS
 
-## PART II: TREE-BASED METHODS FOR DESCRIPTION
-
-### Chapter 3: Regression Trees for Exploratory Segmentation
-
-**Goals**: - Introduce regression trees as descriptive tools for identifying subpopulations - Emphasize interpretation of tree rules and terminal node characteristics - Discuss tree pruning and complexity-accuracy trade-offs from a descriptive perspective
-
-**Key Methods**: - CART algorithm and recursive partitioning - Visualization of tree structure - Extracting and interpreting decision rules - Conditional distributions in terminal nodes
-
-**Applied Value**: Trees reveal how variables jointly segment data, producing interpretable "if-then" rules that can guide policy targeting, customer segmentation, or hypothesis generation. Unlike regression coefficients, tree rules are accessible to non-technical audiences.
-
-**Suggested Examples**: - **Income prediction**: Segmenting populations by education, age, and occupation to understand income determinants - **Patient risk stratification**: Identifying high-risk patient groups based on demographic and clinical variables - **Customer lifetime value**: Segmenting customers by usage patterns and demographics
-
-**Potential Datasets**: - Adult Income dataset (UCI) - MIMIC-III clinical database (de-identified sample) - E-commerce transaction data
-
-------------------------------------------------------------------------
-
-### Chapter 4: Classification Trees and Confusion Matrix Insights
-
-**Goals**: - Extend tree-based methods to categorical outcomes - Use classification trees to understand which features best discriminate between classes - Interpret confusion matrices and class-specific performance descriptively
-
-**Key Methods**: - Classification trees (Gini, entropy splitting criteria) - Variable importance from tree structure - Confusion matrices as descriptive summaries of class separability - ROC curves and precision-recall as descriptive tools (not just predictive evaluation)
-
-**Applied Value**: Classification trees help analysts understand what distinguishes different groups—e.g., program participants vs. non-participants, satisfied vs. dissatisfied customers, diseased vs. healthy patients. This understanding can inform interventions, communications, or further research.
-
-**Suggested Examples**: - **Program participation**: What characteristics distinguish program enrollees from non-enrollees? - **Loan default**: Profiling borrowers who default vs. those who repay - **Species identification**: Distinguishing biological species based on morphological measurements (classic iris dataset, extended)
-
-**Potential Datasets**: - UCI repository classification datasets - Loan default data (e.g., Lending Club) - Biological/ecological datasets (iris, penguins)
-
-------------------------------------------------------------------------
-
-### Chapter 5: Ensemble Methods as Descriptive Instruments
-
-**Goals**: - Show how ensemble methods (random forests, boosting) can be used descriptively - Extract feature importance and partial dependence from ensemble models - Balance accuracy and interpretability
-
-**Key Methods**: - Random forests: aggregated variable importance - Gradient boosting: sequential feature contribution - Out-of-bag (OOB) predictions for internal validation - Proximity matrices for similarity-based clustering
-
-**Applied Value**: Ensemble methods provide robust estimates of variable importance in complex data, guiding analysts to focus on the most relevant features. Proximity matrices offer an alternative to traditional clustering methods.
-
-**Suggested Examples**: - **Social determinants of health**: Which of 50+ demographic and environmental variables most strongly associate with health outcomes? - **Text + tabular data**: Combining survey text responses with numerical data to predict sentiment or topic - **Environmental monitoring**: Identifying key pollutants or climate variables associated with ecological outcomes
-
-**Potential Datasets**: - CDC PLACES health data - Twitter sentiment + metadata - Environmental monitoring datasets (air quality, water quality)
-
-------------------------------------------------------------------------
-
-## PART III: INTERPRETABLE MACHINE LEARNING
-
-### Chapter 6: Interpretable ML—An Overview
-
-**Goals**: - Introduce the paradigm of using ML models for description rather than prediction - Distinguish between intrinsically interpretable models and post-hoc interpretation methods - Motivate interpretable ML as a bridge between predictive accuracy and human understanding
-
-**Key Methods**: - Model-agnostic interpretation framework - Global vs. local explanations - Feature effects, interactions, and attributions
-
-**Applied Value**: Provides a conceptual roadmap for using sophisticated models to understand data, not just predict it. Particularly valuable when dealing with nonlinear relationships that simple models cannot capture.
-
-**Suggested Examples**: - **Complex survey data**: Understanding multifaceted determinants of public opinion - **Healthcare readmissions**: Identifying risk factors in high-dimensional medical records - **Economic forecasting**: Interpreting which indicators drive outcomes in a complex economy
-
-**Potential Datasets**: - Pew Research Center surveys - Hospital readmission data (HCUP) - Federal Reserve economic data (FRED)
-
-------------------------------------------------------------------------
-
-### Chapter 7: Feature Importance and Variable Selection
-
-**Goals**: - Systematically compare feature importance measures across model types - Discuss permutation importance, SHAP-based importance, and gain-based importance - Guide practitioners in choosing and interpreting importance measures
-
-**Key Methods**: - Permutation feature importance (model-agnostic) - Tree-based importance (Gini, gain) - SHAP feature importance (mean absolute SHAP values) - Drop-column importance
-
-**Applied Value**: Feature importance answers the question: "Which variables matter most?" This is often the first question stakeholders ask. Robust importance measures help prioritize data collection, focus analysis, and communicate findings.
-
-**Suggested Examples**: - **Survey analysis**: Which of 100 survey questions most strongly relate to a key outcome? - **Biomarker discovery**: Identifying which of dozens of biomarkers are most informative - **Marketing analytics**: Which customer attributes best predict engagement or conversion?
-
-**Potential Datasets**: - Multi-item survey datasets (World Values Survey) - Proteomics or genomics data (simulated or anonymized) - Marketing campaign performance data
-
-------------------------------------------------------------------------
-
-### Chapter 8: Partial Dependence and Individual Conditional Expectation
-
-**Goals**: - Introduce partial dependence plots (PDPs) as a tool for visualizing marginal effects - Extend to individual conditional expectation (ICE) plots to reveal heterogeneity - Discuss centered ICE plots and accumulated local effects (ALE)
-
-**Key Methods**: - Partial dependence plots for continuous and categorical features - ICE plots and their relationship to PDPs - Accumulated Local Effects (ALE) to handle correlated features
-
-**Applied Value**: PDPs and ICE plots allow analysts to visualize how changing one variable affects an outcome, holding others constant. Unlike regression coefficients, these plots can reveal nonlinear relationships, thresholds, and interactions.
-
-**Suggested Examples**: - **Income vs. education**: Nonlinear returns to education at different levels - **Age and health outcomes**: Threshold effects and heterogeneity across subpopulations - **Price sensitivity**: How demand changes with price, accounting for other marketing variables
-
-**Potential Datasets**: - Labor market data (Current Population Survey) - Clinical trial data or observational health studies - Pricing experiments from e-commerce
-
-------------------------------------------------------------------------
-
-### Chapter 9: Shapley Values and Additive Explanations
-
-**Goals**: - Introduce Shapley values from cooperative game theory - Apply SHAP (SHapley Additive exPlanations) to decompose model predictions - Interpret SHAP values both globally (aggregated) and locally (individual observations)
-
-**Key Methods**: - SHAP values: axioms and computation - TreeSHAP for tree-based models - KernelSHAP for model-agnostic explanations - SHAP dependence plots and interaction effects
-
-**Applied Value**: SHAP values provide a principled way to attribute a prediction to individual features, offering both local explanations ("why did this person have this outcome?") and global insights (aggregated SHAP values as feature importance). Particularly valuable for explaining model-driven insights to non-technical audiences.
-
-**Suggested Examples**: - **Loan approval**: Explaining why a particular applicant was flagged as high-risk - **Patient diagnosis**: Which symptoms and test results contributed most to a diagnostic prediction? - **Employee attrition**: Understanding why certain employees are predicted to leave
-
-**Potential Datasets**: - Credit scoring datasets - Medical diagnosis datasets (e.g., diabetes, heart disease) - HR attrition data (simulated or anonymized)
-
-------------------------------------------------------------------------
-
-## PART IV: AUTOML FOR EXPLORATION
-
-### Chapter 10: AutoML as a Descriptive Tool
-
-**Goals**: - Reframe AutoML from a predictive to a descriptive perspective - Discuss how automated model search can identify unexpected patterns - Introduce AutoML platforms (H2O, TPOT, AutoGluon) and their descriptive use
-
-**Key Methods**: - Automated feature engineering - Model ensembles and stacking - Leaderboards as exploratory summaries - Extracting interpretable summaries from AutoML outputs
-
-**Applied Value**: AutoML democratizes advanced modeling, allowing analysts without deep ML expertise to explore complex data. From a descriptive standpoint, AutoML can rapidly screen thousands of model configurations, revealing which feature transformations and interactions matter.
-
-**Suggested Examples**: - **Exploratory policy research**: Quickly identifying important predictors in administrative data - **Preliminary data journalism**: Screening for patterns in newly released datasets - **Rapid prototyping**: Testing whether complex patterns exist before investing in detailed analysis
-
-**Potential Datasets**: - Government administrative data (e.g., tax records, program enrollment) - Open data portals (data.gov, European data portal) - Kaggle "playground" datasets
-
-------------------------------------------------------------------------
-
-### Chapter 11: Automated Feature Engineering and Interaction Discovery
-
-**Goals**: - Introduce systematic approaches to creating derived features - Discuss interaction detection and polynomial features - Balance automation with interpretability
-
-**Key Methods**: - Polynomial and interaction features - Binning and discretization - Aggregations and rolling statistics - Automated interaction testing (e.g., Friedman's H-statistic)
-
-**Applied Value**: Real-world relationships are often nonlinear and interactive. Automated feature engineering can uncover these patterns, but practitioners need to understand what features were created and why they matter. This chapter bridges automation and insight.
-
-**Suggested Examples**: - **Time-series features**: Creating lag features, moving averages, and trend indicators for economic data - **Geographic interactions**: Combining spatial variables to detect regional effects - **Survey response patterns**: Detecting response styles or interaction effects in questionnaire data
-
-**Potential Datasets**: - Economic time series (unemployment, inflation, stock prices) - Geospatial datasets (census data with geographic identifiers) - Multi-item questionnaires (Big Five personality, quality of life surveys)
-
-------------------------------------------------------------------------
-
-## PART V: ASSOCIATION ANALYSIS
-
-### Chapter 12: Unified Association Measures for Mixed-Type Variables
+### Chapter 3: Unified Association Measures for Mixed-Type Variables
 
 **Goals**: - Present a unified framework for measuring association across variable types - Compare classical measures (Pearson, Spearman, Cramér's V) with modern alternatives (distance correlation, MIC) - Provide practical guidance on choosing measures based on data properties and research questions
 
@@ -186,7 +53,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 13: Extensions of Correlation—Nonlinear and Conditional
+### Chapter 4: Extensions of Correlation—Nonlinear and Conditional
 
 **Goals**: - Move beyond linear correlation to capture nonlinear and conditional associations - Introduce copula-based dependence measures - Discuss conditional independence and graphical models
 
@@ -200,7 +67,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 14: Network-Based Representations of Associations
+### Chapter 5: Network-Based Representations of Associations
 
 **Goals**: - Represent multivariate association structures as networks - Introduce network layouts, centrality measures, and community detection - Apply network analysis to discover higher-order structure in data
 
@@ -213,10 +80,9 @@
 **Potential Datasets**: - World Values Survey (network of attitudes) - Gene expression datasets (TCGA, GEO) - World Development Indicators (country-level networks)
 
 ------------------------------------------------------------------------
+## PART III: INTERACTIVE VISUAL ANALYTICS
 
-## PART VI: INTERACTIVE VISUAL ANALYTICS
-
-### Chapter 15: Principles of Interactive Exploration
+### Chapter 6: Principles of Interactive Exploration
 
 **Goals**: - Articulate the value of interactivity in exploratory analysis - Introduce design principles for interactive visualizations - Discuss the role of dashboards and applications vs. static reports
 
@@ -230,7 +96,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 16: The AssociationExplorer Application
+### Chapter 7: The AssociationExplorer Application
 
 **Goals**: - Provide a detailed walkthrough of the AssociationExplorer Shiny app - Demonstrate its use on a real dataset - Discuss how it integrates multiple methods from earlier chapters
 
@@ -244,7 +110,7 @@
 
 ------------------------------------------------------------------------
 
-### Chapter 17: Communicating Findings Through Visualization
+### Chapter 8: Communicating Findings Through Visualization
 
 **Goals**: - Discuss best practices for visual communication of descriptive results - Address common pitfalls (misleading axes, over-plotting, chart junk) - Introduce principles of storytelling with data
 
@@ -257,7 +123,135 @@
 **Potential Datasets**: - Examples from published reports (with critique) - Student-generated examples (anonymized)
 
 ------------------------------------------------------------------------
+## PART IV: TREE-BASED METHODS FOR DESCRIPTION
 
+### Chapter 9: Regression Trees for Exploratory Segmentation
+
+**Goals**: - Introduce regression trees as descriptive tools for identifying subpopulations - Emphasize interpretation of tree rules and terminal node characteristics - Discuss tree pruning and complexity-accuracy trade-offs from a descriptive perspective
+
+**Key Methods**: - CART algorithm and recursive partitioning - Visualization of tree structure - Extracting and interpreting decision rules - Conditional distributions in terminal nodes
+
+**Applied Value**: Trees reveal how variables jointly segment data, producing interpretable "if-then" rules that can guide policy targeting, customer segmentation, or hypothesis generation. Unlike regression coefficients, tree rules are accessible to non-technical audiences.
+
+**Suggested Examples**: - **Income prediction**: Segmenting populations by education, age, and occupation to understand income determinants - **Patient risk stratification**: Identifying high-risk patient groups based on demographic and clinical variables - **Customer lifetime value**: Segmenting customers by usage patterns and demographics
+
+**Potential Datasets**: - Adult Income dataset (UCI) - MIMIC-III clinical database (de-identified sample) - E-commerce transaction data
+
+------------------------------------------------------------------------
+
+### Chapter 10: Classification Trees and Confusion Matrix Insights
+
+**Goals**: - Extend tree-based methods to categorical outcomes - Use classification trees to understand which features best discriminate between classes - Interpret confusion matrices and class-specific performance descriptively
+
+**Key Methods**: - Classification trees (Gini, entropy splitting criteria) - Variable importance from tree structure - Confusion matrices as descriptive summaries of class separability - ROC curves and precision-recall as descriptive tools (not just predictive evaluation)
+
+**Applied Value**: Classification trees help analysts understand what distinguishes different groups—e.g., program participants vs. non-participants, satisfied vs. dissatisfied customers, diseased vs. healthy patients. This understanding can inform interventions, communications, or further research.
+
+**Suggested Examples**: - **Program participation**: What characteristics distinguish program enrollees from non-enrollees? - **Loan default**: Profiling borrowers who default vs. those who repay - **Species identification**: Distinguishing biological species based on morphological measurements (classic iris dataset, extended)
+
+**Potential Datasets**: - UCI repository classification datasets - Loan default data (e.g., Lending Club) - Biological/ecological datasets (iris, penguins)
+
+------------------------------------------------------------------------
+
+### Chapter 11: Ensemble Methods as Descriptive Instruments
+
+**Goals**: - Show how ensemble methods (random forests, boosting) can be used descriptively - Extract feature importance and partial dependence from ensemble models - Balance accuracy and interpretability
+
+**Key Methods**: - Random forests: aggregated variable importance - Gradient boosting: sequential feature contribution - Out-of-bag (OOB) predictions for internal validation - Proximity matrices for similarity-based clustering
+
+**Applied Value**: Ensemble methods provide robust estimates of variable importance in complex data, guiding analysts to focus on the most relevant features. Proximity matrices offer an alternative to traditional clustering methods.
+
+**Suggested Examples**: - **Social determinants of health**: Which of 50+ demographic and environmental variables most strongly associate with health outcomes? - **Text + tabular data**: Combining survey text responses with numerical data to predict sentiment or topic - **Environmental monitoring**: Identifying key pollutants or climate variables associated with ecological outcomes
+
+**Potential Datasets**: - CDC PLACES health data - Twitter sentiment + metadata - Environmental monitoring datasets (air quality, water quality)
+
+------------------------------------------------------------------------
+## PART V: INTERPRETABLE MACHINE LEARNING
+
+### Chapter 12: Interpretable ML—An Overview
+
+**Goals**: - Introduce the paradigm of using ML models for description rather than prediction - Distinguish between intrinsically interpretable models and post-hoc interpretation methods - Motivate interpretable ML as a bridge between predictive accuracy and human understanding
+
+**Key Methods**: - Model-agnostic interpretation framework - Global vs. local explanations - Feature effects, interactions, and attributions
+
+**Applied Value**: Provides a conceptual roadmap for using sophisticated models to understand data, not just predict it. Particularly valuable when dealing with nonlinear relationships that simple models cannot capture.
+
+**Suggested Examples**: - **Complex survey data**: Understanding multifaceted determinants of public opinion - **Healthcare readmissions**: Identifying risk factors in high-dimensional medical records - **Economic forecasting**: Interpreting which indicators drive outcomes in a complex economy
+
+**Potential Datasets**: - Pew Research Center surveys - Hospital readmission data (HCUP) - Federal Reserve economic data (FRED)
+
+------------------------------------------------------------------------
+
+### Chapter 13: Feature Importance and Variable Selection
+
+**Goals**: - Systematically compare feature importance measures across model types - Discuss permutation importance, SHAP-based importance, and gain-based importance - Guide practitioners in choosing and interpreting importance measures
+
+**Key Methods**: - Permutation feature importance (model-agnostic) - Tree-based importance (Gini, gain) - SHAP feature importance (mean absolute SHAP values) - Drop-column importance
+
+**Applied Value**: Feature importance answers the question: "Which variables matter most?" This is often the first question stakeholders ask. Robust importance measures help prioritize data collection, focus analysis, and communicate findings.
+
+**Suggested Examples**: - **Survey analysis**: Which of 100 survey questions most strongly relate to a key outcome? - **Biomarker discovery**: Identifying which of dozens of biomarkers are most informative - **Marketing analytics**: Which customer attributes best predict engagement or conversion?
+
+**Potential Datasets**: - Multi-item survey datasets (World Values Survey) - Proteomics or genomics data (simulated or anonymized) - Marketing campaign performance data
+
+------------------------------------------------------------------------
+
+### Chapter 14: Partial Dependence and Individual Conditional Expectation
+
+**Goals**: - Introduce partial dependence plots (PDPs) as a tool for visualizing marginal effects - Extend to individual conditional expectation (ICE) plots to reveal heterogeneity - Discuss centered ICE plots and accumulated local effects (ALE)
+
+**Key Methods**: - ICE plots for continuous and categorical features - Accumulated Local Effects (ALE) to handle correlated features
+
+**Applied Value**: PDPs and ICE plots allow analysts to visualize how changing one variable affects an outcome, holding others constant. Unlike regression coefficients, these plots can reveal nonlinear relationships, thresholds, and interactions.
+
+**Suggested Examples**: - **Income vs. education**: Nonlinear returns to education at different levels - **Age and health outcomes**: Threshold effects and heterogeneity across subpopulations - **Price sensitivity**: How demand changes with price, accounting for other marketing variables
+
+**Potential Datasets**: - Labor market data (Current Population Survey) - Clinical trial data or observational health studies - Pricing experiments from e-commerce
+
+------------------------------------------------------------------------
+
+### Chapter 15: Shapley Values and Additive Explanations
+
+**Goals**: - Introduce Shapley values from cooperative game theory - Apply SHAP (SHapley Additive exPlanations) to decompose model predictions - Interpret SHAP values both globally (aggregated) and locally (individual observations)
+
+**Key Methods**: - SHAP values: axioms and computation - TreeSHAP for tree-based models - KernelSHAP for model-agnostic explanations - SHAP dependence plots and interaction effects
+
+**Applied Value**: SHAP values provide a principled way to attribute a prediction to individual features, offering both local explanations ("why did this person have this outcome?") and global insights (aggregated SHAP values as feature importance). Particularly valuable for explaining model-driven insights to non-technical audiences.
+
+**Suggested Examples**: - **Loan approval**: Explaining why a particular applicant was flagged as high-risk - **Patient diagnosis**: Which symptoms and test results contributed most to a diagnostic prediction? - **Employee attrition**: Understanding why certain employees are predicted to leave
+
+**Potential Datasets**: - Credit scoring datasets - Medical diagnosis datasets (e.g., diabetes, heart disease) - HR attrition data (simulated or anonymized)
+
+------------------------------------------------------------------------
+## PART VI: AUTOML FOR EXPLORATION
+
+### Chapter 16: AutoML as a Descriptive Tool
+
+**Goals**: - Reframe AutoML from a predictive to a descriptive perspective - Discuss how automated model search can identify unexpected patterns - Introduce AutoML platforms (H2O, TPOT, AutoGluon) and their descriptive use
+
+**Key Methods**: - Automated feature engineering - Model ensembles and stacking - Leaderboards as exploratory summaries - Extracting interpretable summaries from AutoML outputs
+
+**Applied Value**: AutoML democratizes advanced modeling, allowing analysts without deep ML expertise to explore complex data. From a descriptive standpoint, AutoML can rapidly screen thousands of model configurations, revealing which feature transformations and interactions matter.
+
+**Suggested Examples**: - **Exploratory policy research**: Quickly identifying important predictors in administrative data - **Preliminary data journalism**: Screening for patterns in newly released datasets - **Rapid prototyping**: Testing whether complex patterns exist before investing in detailed analysis
+
+**Potential Datasets**: - Government administrative data (e.g., tax records, program enrollment) - Open data portals (data.gov, European data portal) - Kaggle "playground" datasets
+
+------------------------------------------------------------------------
+
+### Chapter 17: Automated Feature Engineering and Interaction Discovery
+
+**Goals**: - Introduce systematic approaches to creating derived features - Discuss interaction detection and polynomial features - Balance automation with interpretability
+
+**Key Methods**: - Polynomial and interaction features - Binning and discretization - Aggregations and rolling statistics - Automated interaction testing (e.g., Friedman's H-statistic)
+
+**Applied Value**: Real-world relationships are often nonlinear and interactive. Automated feature engineering can uncover these patterns, but practitioners need to understand what features were created and why they matter. This chapter bridges automation and insight.
+
+**Suggested Examples**: - **Time-series features**: Creating lag features, moving averages, and trend indicators for economic data - **Geographic interactions**: Combining spatial variables to detect regional effects - **Survey response patterns**: Detecting response styles or interaction effects in questionnaire data
+
+**Potential Datasets**: - Economic time series (unemployment, inflation, stock prices) - Geospatial datasets (census data with geographic identifiers) - Multi-item questionnaires (Big Five personality, quality of life surveys)
+
+------------------------------------------------------------------------
 ## PART VII: APPLIED CASE STUDIES
 
 ### Chapter 18: Case Study—Public Policy and Program Evaluation
@@ -292,7 +286,7 @@
 
 **Goals**: - Apply methods to business data: transactions, customer attributes, behavioral metrics - Demonstrate how descriptive analysis drives business decisions (segmentation, targeting, personalization) - Discuss ethical considerations in commercial data use
 
-**Key Methods Applied**: - Random forests for customer lifetime value prediction (used descriptively) - Partial dependence plots to understand pricing and promotion effects - Association networks to detect product co-purchase patterns
+**Key Methods Applied**: - Random forests for customer lifetime value prediction (used descriptively) - ICE plots to understand pricing and promotion effects - Association networks to detect product co-purchase patterns
 
 **Applied Value**: Business analytics is a major application domain for descriptive methods. This case study shows how to translate statistical findings into strategic recommendations.
 

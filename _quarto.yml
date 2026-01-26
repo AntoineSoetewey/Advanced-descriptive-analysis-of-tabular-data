@@ -16,35 +16,35 @@ book:
         - chapter-01-beyond-basic-descriptives.qmd
         - chapter-02-data-types-associations.qmd
     
-    - part: "Tree-Based Methods for Description"
-      chapters:
-        - chapter-03-regression-trees.qmd
-        - chapter-04-classification-trees.qmd
-        - chapter-05-ensemble-methods-description.qmd
-    
-    - part: "Interpretable Machine Learning"
-      chapters:
-        - chapter-06-interpretable-ml-overview.qmd
-        - chapter-07-feature-importance.qmd
-        - chapter-08-partial-dependence.qmd
-        - chapter-09-shapley-values.qmd
-    
-    - part: "AutoML for Exploration"
-      chapters:
-        - chapter-10-automl-descriptive.qmd
-        - chapter-11-automated-feature-engineering.qmd
-    
     - part: "Association Analysis"
       chapters:
-        - chapter-12-association-measures.qmd
-        - chapter-13-correlation-extensions.qmd
-        - chapter-14-network-representations.qmd
+        - chapter-03-association-measures.qmd
+        - chapter-04-correlation-extensions.qmd
+        - chapter-05-network-representations.qmd
     
     - part: "Interactive Visual Analytics"
       chapters:
-        - chapter-15-shiny-exploration.qmd
-        - chapter-16-association-explorer.qmd
-        - chapter-17-communication-visualization.qmd
+        - chapter-06-shiny-exploration.qmd
+        - chapter-07-association-explorer.qmd
+        - chapter-08-communication-visualization.qmd
+    
+    - part: "Tree-Based Methods for Description"
+      chapters:
+        - chapter-09-regression-trees.qmd
+        - chapter-10-classification-trees.qmd
+        - chapter-11-ensemble-methods-description.qmd
+    
+    - part: "Interpretable Machine Learning"
+      chapters:
+        - chapter-12-interpretable-ml-overview.qmd
+        - chapter-13-feature-importance.qmd
+        - chapter-14-partial-dependence.qmd
+        - chapter-15-shapley-values.qmd
+    
+    - part: "AutoML for Exploration"
+      chapters:
+        - chapter-16-automl-descriptive.qmd
+        - chapter-17-automated-feature-engineering.qmd
     
     - part: "Applied Case Studies"
       chapters:
@@ -73,4 +73,3 @@ format:
   epub: default
 
 editor: visual
-

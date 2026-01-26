@@ -39,11 +39,11 @@ The book is organized into seven parts:
 
 **Part I: Foundations** establishes the conceptual framework, revisiting what it means to "describe" data and introducing the challenge of mixed-type variables and multivariate associations.
 
-**Parts II–IV** present three families of advanced methods: tree-based models for segmentation and description, interpretable machine learning techniques for understanding complex patterns, and AutoML approaches that automate exploration.
+**Part II** focuses on association analysis—measuring relationships between pairs of variables of different types and representing these associations as networks.
 
-**Part V** focuses specifically on association analysis—measuring relationships between variables of different types and representing these associations as networks.
+**Part III** introduces interactive visual analytics, including the AssociationExplorer Shiny application, which operationalizes association-focused methods in a unified exploratory interface.
 
-**Part VI** introduces interactive visual analytics, including the AssociationExplorer Shiny application, which integrates many of the methods presented earlier into a unified exploratory interface.
+**Parts IV–VI** present three families of advanced methods for higher-dimensional structure: tree-based models for segmentation and description, interpretable machine learning techniques for understanding complex patterns, and AutoML approaches that automate exploration.
 
 **Part VII** presents extended applied case studies from policy analysis, public health, and business analytics, demonstrating how these methods solve real-world problems.
 
