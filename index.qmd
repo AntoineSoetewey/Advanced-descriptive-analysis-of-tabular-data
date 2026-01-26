@@ -4,6 +4,8 @@ Descriptive statistics are often treated as a preliminary step—a routine box t
 
 This book synthesizes advanced techniques for descriptive analysis of tabular data, drawing on recent developments in machine learning, network analysis, and interactive visualization. Our goal is to equip researchers, analysts, policymakers, and data journalists with tools that go beyond means and standard deviations, enabling them to extract actionable insights from multivariate datasets.
 
+The methods and tools presented here are not a repackaging of standard EDA. They reflect original methodological syntheses, implementation choices, and applied workflows developed through research and field practice. In that sense, this book also serves as a portfolio: a concrete, citable body of work that demonstrates innovation in descriptive analytics and foregrounds substantive methodological originality.
+
 The material presented here emerged from postdoctoral research at the intersection of applied statistics, machine learning, and data visualization. It reflects a pragmatic philosophy: methods should be interpretable, visual, and suitable for communicating findings to statistically literate but non-technical audiences.
 
 ## Who This Book Is For

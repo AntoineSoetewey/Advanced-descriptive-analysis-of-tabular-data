@@ -6,7 +6,7 @@ When confronted with a dataset containing dozens or hundreds of variables—mixi
 
 Traditional descriptive statistics (means, medians, frequency tables, correlation matrices) remain essential, but they quickly become insufficient as data complexity grows. A correlation matrix for 50 variables contains 1,225 pairwise relationships, most of which are noise. Standard summary statistics provide no guidance on which variables matter most, how they interact, or what segments or subpopulations might exist in the data.
 
-This book addresses the challenge of **advanced descriptive analysis**: moving beyond elementary summaries to extract meaningful structure from complex tabular data.
+This book addresses the challenge of **advanced descriptive analysis**: moving beyond elementary summaries to extract meaningful structure from complex tabular data. It is intentionally positioned as an original methodological portfolio—combining novel syntheses, practical tooling, and reproducible workflows that evidence substantive methodological originality.
 
 ## What Is Descriptive Analysis?
 
@@ -76,7 +76,7 @@ Each method is illustrated with applied examples drawn from:
 -   **Social science research**: analyzing survey responses, detecting patterns in observational data
 -   **Data journalism**: investigating patterns in government data, economic indicators, or social trends
 
-Throughout the book, these methods are implemented in R and demonstrated on real datasets. A recurring example is the **AssociationExplorer** Shiny application, developed as part of the research underlying this work, which integrates multiple descriptive techniques into a unified interactive interface. While all methods can be implemented using standard statistical software, AssociationExplorer provides a practical tool for immediate exploratory use. These examples demonstrate that advanced descriptive methods are not academic exercises—they solve genuine problems faced by analysts across diverse fields.
+Throughout the book, these methods are implemented in R and demonstrated on real datasets. A recurring example is the **AssociationExplorer** Shiny application, developed as part of the research underlying this work, which integrates multiple descriptive techniques into a unified interactive interface. While all methods can be implemented using standard statistical software, AssociationExplorer provides a practical tool for immediate exploratory use. These examples demonstrate that advanced descriptive methods are not academic exercises—they solve genuine problems faced by analysts across diverse fields and showcase original contributions.
 
 ## Relationship to Other Analytical Goals
 
@@ -91,11 +91,11 @@ Descriptive analysis intersects with but differs from:
 
 The book proceeds from foundations to applications:
 
--   **Chapters 1–2** establish conceptual groundwork and introduce the challenge of mixed-type data
--   **Chapters 3–11** present three families of advanced methods (trees, interpretable ML, AutoML)
--   **Chapters 12–14** focus on association measures and network representations
--   **Chapters 15–17** introduce interactive visual analytics
--   **Chapters 18–20** present extended applied case studies
+-   **Chapters 1–3** establish conceptual groundwork, mixed-type data challenges, and data preparation
+-   **Chapters 4–6** focus on association measures and network representations
+-   **Chapters 7–9** introduce interactive visual analytics
+-   **Chapters 10–18** present three families of advanced methods (trees, interpretable ML, AutoML)
+-   **Chapters 19–21** present extended applied case studies
 
 Readers can follow a linear path or jump to chapters matching their immediate needs. Code examples and exercises throughout encourage hands-on practice.
 

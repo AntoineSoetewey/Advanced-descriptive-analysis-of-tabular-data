@@ -1,6 +1,6 @@
 # Advanced Descriptive Analysis of Tabular Data
 
-Comprehensive Quarto book on advanced descriptive analytics for tabular data, aimed at researchers, practitioners, policymakers, data journalists, and graduate students. The material emphasizes interpretable, visual, and applied methods for uncovering structure, associations, and patterns in multivariate datasets.
+Comprehensive Quarto book on advanced descriptive analytics for tabular data, aimed at researchers, practitioners, policymakers, data journalists, and graduate students. The material emphasizes interpretable, visual, and applied methods for uncovering structure, associations, and patterns in multivariate datasets. It is also designed as a portfolio of original methodological contributions and tools that foreground substantive methodological originality.
 
 ## Project Structure
 
