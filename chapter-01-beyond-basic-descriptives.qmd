@@ -1,5 +1,14 @@
 # Beyond Basic Descriptive Statistics {#sec-beyond-basic}
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+# Setup for chapter examples
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(patchwork)
+library(gt)
+```
+
 ## Why “Basic” Summaries Are Not Enough
 
 A mean, a median, and a standard deviation can be computed in seconds, but they rarely tell the whole story. Two datasets can share identical means and variances while having radically different shapes, outlier structures, or subgroup patterns. In high‑dimensional datasets, univariate summaries also conceal interaction and conditional relationships that often matter more than any marginal distribution.
@@ -39,6 +48,21 @@ These measures preserve descriptive intent while reducing sensitivity to extreme
 
 Histograms can be misleading due to binning choices. Kernel density estimates (KDEs) and empirical CDFs show shape more faithfully. ECDFs are particularly useful for comparing distributions because they show the full cumulative structure without smoothing.
 
+```{r}
+# Density and ECDF side by side
+p1 <- mtcars %>%
+  ggplot(aes(x = mpg)) +
+  geom_density(fill = "grey80", color = "grey20") +
+  labs(title = "KDE of mpg", x = "mpg", y = "Density")
+
+p2 <- mtcars %>%
+  ggplot(aes(x = mpg)) +
+  stat_ecdf(geom = "step") +
+  labs(title = "ECDF of mpg", x = "mpg", y = "F(x)")
+
+p1 + p2
+```
+
 ## Multimodality and Mixtures
 
 A single distribution can conceal multiple regimes. For example, household income often reflects a mixture of wage earners, retirees, and business owners. Multimodality is a descriptive signal of underlying subpopulations. Techniques to detect it include:
@@ -67,6 +91,29 @@ Scatterplots with smoothers (e.g., LOESS) often reveal nonlinear trends that cor
 
 A useful descriptive strategy is to compute **binned summaries**: divide a continuous predictor into quantile bins and summarize the response within each bin. This provides a simple approximation of conditional structure without invoking a full model.
 
+```{r}
+# Binned summaries to reveal nonlinear structure
+mtcars %>%
+  mutate(wt_bin = ntile(wt, 5)) %>%
+  group_by(wt_bin) %>%
+  summarise(
+    mpg_median = median(mpg, na.rm = TRUE),
+    mpg_iqr = IQR(mpg, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  gt() %>%
+  fmt_number(columns = c(mpg_median, mpg_iqr), decimals = 2)
+
+mtcars %>%
+  mutate(wt_bin = ntile(wt, 5)) %>%
+  group_by(wt_bin) %>%
+  summarise(mpg_median = median(mpg), .groups = "drop") %>%
+  ggplot(aes(x = wt_bin, y = mpg_median)) +
+  geom_line() +
+  geom_point() +
+  labs(x = "Weight bin (quintiles)", y = "Median mpg")
+```
+
 ### Association Heterogeneity
 
 Associations can differ across subgroups. An overall correlation might hide a strong relationship within a subgroup or even mask a reversal (Simpson’s paradox). Descriptive analysis should therefore report **stratified associations** when meaningful groupings exist.
@@ -94,6 +141,24 @@ Descriptive checks include:
 -   **Co‑missingness patterns** (variables missing together)
 
 Understanding missingness patterns is a prerequisite for credible descriptive analysis because it reveals which parts of the data are under‑observed or biased.
+
+```{r}
+# Simple missingness profile
+airquality %>%
+  summarise(across(everything(), ~ mean(is.na(.x)))) %>%
+  pivot_longer(everything(), names_to = "variable", values_to = "missing_rate") %>%
+  arrange(desc(missing_rate)) %>%
+  gt() %>%
+  fmt_percent(columns = missing_rate, decimals = 1)
+
+# Co-missingness count matrix
+miss_mat <- airquality %>% mutate(across(everything(), is.na))
+co_miss <- t(as.matrix(miss_mat)) %*% as.matrix(miss_mat)
+co_miss %>%
+  as.data.frame() %>%
+  tibble::rownames_to_column(var = "variable") %>%
+  gt()
+```
 
 ## Scaling, Standardization, and Comparability
 
@@ -132,6 +197,19 @@ Certain visual tools provide richer descriptive information than conventional ch
 
 These graphics remain descriptive but give a more faithful sense of distributional complexity and subgroup structure.
 
+```{r}
+# Heatmap of median summary statistics across groups
+mtcars %>%
+  select(mpg, hp, wt, cyl) %>%
+  group_by(cyl) %>%
+  summarise(across(c(mpg, hp, wt), median), .groups = "drop") %>%
+  pivot_longer(-cyl, names_to = "variable", values_to = "median") %>%
+  ggplot(aes(x = factor(cyl), y = variable, fill = median)) +
+  geom_tile() +
+  scale_fill_viridis_c() +
+  labs(x = "Cylinders", y = "Variable", fill = "Median")
+```
+
 ## A Practical Workflow
 
 A robust descriptive workflow often follows this sequence:
@@ -149,22 +227,24 @@ This workflow remains entirely descriptive while systematically uncovering struc
 The following minimal template illustrates how to go beyond means and SDs with a few descriptive enhancements:
 
 ```{r}
-# Robust summary for a numeric variable
+# Robust summary for a numeric variable (tidy output)
 summary_stats <- function(x) {
-  x <- x[!is.na(x)]
-  c(
-    mean = mean(x),
-    median = median(x),
-    sd = sd(x),
-    mad = mad(x),
-    q10 = quantile(x, 0.10),
-    q90 = quantile(x, 0.90)
+  tibble(
+    mean = mean(x, na.rm = TRUE),
+    median = median(x, na.rm = TRUE),
+    sd = sd(x, na.rm = TRUE),
+    mad = mad(x, na.rm = TRUE),
+    q10 = quantile(x, 0.10, na.rm = TRUE),
+    q90 = quantile(x, 0.90, na.rm = TRUE)
   )
 }
 
 # Conditional summaries by group
-by_group <- tapply(mtcars$mpg, mtcars$cyl, summary_stats)
-by_group
+mtcars %>%
+  group_by(cyl) %>%
+  summarise(summary_stats(mpg), .groups = "drop") %>%
+  gt() %>%
+  fmt_number(columns = c(mean, median, sd, mad, q10, q90), decimals = 2)
 ```
 
 The aim is not sophistication but *discipline*: always inspect robust, conditional, and distributional features before moving to advanced methods.
