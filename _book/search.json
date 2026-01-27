@@ -169,72 +169,6 @@
     ]
   },
   {
-    "objectID": "chapter-03-data-preparation.html",
-    "href": "chapter-03-data-preparation.html",
-    "title": "4  Data Preparation for Descriptive Analysis",
-    "section": "",
-    "text": "4.1 3.1 Understanding Variables and Metadata\nDescriptive analysis is only as reliable as the data that feed it. Before measuring associations or building models, analysts must understand variable definitions, clean inconsistencies, and construct analysis-ready tables. This chapter introduces practical workflows for preparing messy real-world data so that later descriptive methods are interpretable, reproducible, and trustworthy.",
-    "crumbs": [
-      "Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
-    ]
-  },
-  {
-    "objectID": "chapter-03-data-preparation.html#understanding-variables-and-metadata",
-    "href": "chapter-03-data-preparation.html#understanding-variables-and-metadata",
-    "title": "4  Data Preparation for Descriptive Analysis",
-    "section": "",
-    "text": "4.1.1 Goals\n\nClarify variable meaning, units, and coding schemes\nDetect ambiguous or inconsistent definitions across sources\nDocument assumptions and transformations for reproducibility\n\n\n\n4.1.2 Topics\n\nData dictionaries and codebooks\nUnits, scales, and measurement error\nCategorical coding (ordered vs. nominal)\nTime and panel identifiers\nProvenance and data lineage",
-    "crumbs": [
-      "Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
-    ]
-  },
-  {
-    "objectID": "chapter-03-data-preparation.html#cleaning-harmonization-and-quality-checks",
-    "href": "chapter-03-data-preparation.html#cleaning-harmonization-and-quality-checks",
-    "title": "4  Data Preparation for Descriptive Analysis",
-    "section": "4.2 3.2 Cleaning, Harmonization, and Quality Checks",
-    "text": "4.2 3.2 Cleaning, Harmonization, and Quality Checks\n\n4.2.1 Goals\n\nIdentify errors, missingness, and outliers\nHarmonize variables across files or time periods\nApply minimal, transparent corrections\n\n\n\n4.2.2 Topics\n\nMissing data patterns and reporting\nRange checks and logical constraints\nDuplicate records and entity resolution\nStandardizing categories and labels\nDealing with inconsistent time formats",
-    "crumbs": [
-      "Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
-    ]
-  },
-  {
-    "objectID": "chapter-03-data-preparation.html#feature-construction-for-descriptive-insight",
-    "href": "chapter-03-data-preparation.html#feature-construction-for-descriptive-insight",
-    "title": "4  Data Preparation for Descriptive Analysis",
-    "section": "4.3 3.3 Feature Construction for Descriptive Insight",
-    "text": "4.3 3.3 Feature Construction for Descriptive Insight\n\n4.3.1 Goals\n\nCreate interpretable derived variables\nEncode variables for mixed-type association measures\nPreserve interpretability while enabling analysis\n\n\n\n4.3.2 Topics\n\nBinning and discretization (with justification)\nRatios, rates, and per-capita measures\nIndex construction and composite measures\nNormalization and scaling choices\nAudit trails for transformations",
-    "crumbs": [
-      "Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
-    ]
-  },
-  {
-    "objectID": "chapter-03-data-preparation.html#reproducible-preparation-pipelines",
-    "href": "chapter-03-data-preparation.html#reproducible-preparation-pipelines",
-    "title": "4  Data Preparation for Descriptive Analysis",
-    "section": "4.4 3.4 Reproducible Preparation Pipelines",
-    "text": "4.4 3.4 Reproducible Preparation Pipelines\n\n4.4.1 Goals\n\nMake preparation steps transparent and repeatable\nSeparate raw, intermediate, and analysis-ready data\nFacilitate collaboration and review\n\n\n\n4.4.2 Topics\n\nScripted pipelines vs. manual edits\nVersioning datasets and metadata\nValidation checks as code\nSummary reports for prepared datasets",
-    "crumbs": [
-      "Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
-    ]
-  },
-  {
-    "objectID": "chapter-03-data-preparation.html#applied-example-preparing-a-mixed-type-dataset",
-    "href": "chapter-03-data-preparation.html#applied-example-preparing-a-mixed-type-dataset",
-    "title": "4  Data Preparation for Descriptive Analysis",
-    "section": "4.5 3.5 Applied Example: Preparing a Mixed-Type Dataset",
-    "text": "4.5 3.5 Applied Example: Preparing a Mixed-Type Dataset\nA brief walkthrough demonstrates how a raw survey dataset is transformed into an analysis-ready table with clear variable definitions, cleaned categories, and documented transformations. The focus is on traceability: every transformation is explained, and the resulting dataset is ready for association analysis and visual exploration.",
-    "crumbs": [
-      "Foundations",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
-    ]
-  },
-  {
     "objectID": "chapter-01-beyond-basic-descriptives.html",
     "href": "chapter-01-beyond-basic-descriptives.html",
     "title": "2  Beyond Basic Descriptive Statistics",
@@ -375,6 +309,72 @@
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Beyond Basic Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-03-data-preparation.html",
+    "href": "chapter-03-data-preparation.html",
+    "title": "4  Data Preparation for Descriptive Analysis",
+    "section": "",
+    "text": "4.1 3.1 Understanding Variables and Metadata\nDescriptive analysis is only as reliable as the data that feed it. Before measuring associations or building models, analysts must understand variable definitions, clean inconsistencies, and construct analysis-ready tables. This chapter introduces practical workflows for preparing messy real-world data so that later descriptive methods are interpretable, reproducible, and trustworthy.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-03-data-preparation.html#understanding-variables-and-metadata",
+    "href": "chapter-03-data-preparation.html#understanding-variables-and-metadata",
+    "title": "4  Data Preparation for Descriptive Analysis",
+    "section": "",
+    "text": "4.1.1 Goals\n\nClarify variable meaning, units, and coding schemes\nDetect ambiguous or inconsistent definitions across sources\nDocument assumptions and transformations for reproducibility\n\n\n\n4.1.2 Topics\n\nData dictionaries and codebooks\nUnits, scales, and measurement error\nCategorical coding (ordered vs. nominal)\nTime and panel identifiers\nProvenance and data lineage",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-03-data-preparation.html#cleaning-harmonization-and-quality-checks",
+    "href": "chapter-03-data-preparation.html#cleaning-harmonization-and-quality-checks",
+    "title": "4  Data Preparation for Descriptive Analysis",
+    "section": "4.2 3.2 Cleaning, Harmonization, and Quality Checks",
+    "text": "4.2 3.2 Cleaning, Harmonization, and Quality Checks\n\n4.2.1 Goals\n\nIdentify errors, missingness, and outliers\nHarmonize variables across files or time periods\nApply minimal, transparent corrections\n\n\n\n4.2.2 Topics\n\nMissing data patterns and reporting\nRange checks and logical constraints\nDuplicate records and entity resolution\nStandardizing categories and labels\nDealing with inconsistent time formats",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-03-data-preparation.html#feature-construction-for-descriptive-insight",
+    "href": "chapter-03-data-preparation.html#feature-construction-for-descriptive-insight",
+    "title": "4  Data Preparation for Descriptive Analysis",
+    "section": "4.3 3.3 Feature Construction for Descriptive Insight",
+    "text": "4.3 3.3 Feature Construction for Descriptive Insight\n\n4.3.1 Goals\n\nCreate interpretable derived variables\nEncode variables for mixed-type association measures\nPreserve interpretability while enabling analysis\n\n\n\n4.3.2 Topics\n\nBinning and discretization (with justification)\nRatios, rates, and per-capita measures\nIndex construction and composite measures\nNormalization and scaling choices\nAudit trails for transformations",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-03-data-preparation.html#reproducible-preparation-pipelines",
+    "href": "chapter-03-data-preparation.html#reproducible-preparation-pipelines",
+    "title": "4  Data Preparation for Descriptive Analysis",
+    "section": "4.4 3.4 Reproducible Preparation Pipelines",
+    "text": "4.4 3.4 Reproducible Preparation Pipelines\n\n4.4.1 Goals\n\nMake preparation steps transparent and repeatable\nSeparate raw, intermediate, and analysis-ready data\nFacilitate collaboration and review\n\n\n\n4.4.2 Topics\n\nScripted pipelines vs. manual edits\nVersioning datasets and metadata\nValidation checks as code\nSummary reports for prepared datasets",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-03-data-preparation.html#applied-example-preparing-a-mixed-type-dataset",
+    "href": "chapter-03-data-preparation.html#applied-example-preparing-a-mixed-type-dataset",
+    "title": "4  Data Preparation for Descriptive Analysis",
+    "section": "4.5 3.5 Applied Example: Preparing a Mixed-Type Dataset",
+    "text": "4.5 3.5 Applied Example: Preparing a Mixed-Type Dataset\nA brief walkthrough demonstrates how a raw survey dataset is transformed into an analysis-ready table with clear variable definitions, cleaned categories, and documented transformations. The focus is on traceability: every transformation is explained, and the resulting dataset is ready for association analysis and visual exploration.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
     ]
   }
 ]
