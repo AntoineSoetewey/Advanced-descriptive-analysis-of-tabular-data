@@ -1,1 +1,176 @@
-# Beyond Basic Descriptive Statistics
+# Beyond Basic Descriptive Statistics {#sec-beyond-basic}
+
+## Why “Basic” Summaries Are Not Enough
+
+A mean, a median, and a standard deviation can be computed in seconds, but they rarely tell the whole story. Two datasets can share identical means and variances while having radically different shapes, outlier structures, or subgroup patterns. In high‑dimensional datasets, univariate summaries also conceal interaction and conditional relationships that often matter more than any marginal distribution.
+
+Basic descriptive statistics are necessary but not sufficient. This chapter expands the descriptive toolbox with methods that remain **non‑inferential** but offer far richer insight into data structure. The goal is to answer more nuanced questions:
+
+-   Where are the *mass* and *tails* of the distribution?
+-   Are there **subpopulations** with distinct profiles?
+-   Are relationships **nonlinear**, **heterogeneous**, or **conditional**?
+-   Which variables are **stable** versus **volatile** across subgroups?
+
+## Distributional Shape: Beyond Mean and Variance
+
+### Quantiles and Tail Behavior
+
+Quantiles describe where the data live, not just how they average out. In applied settings, percentiles often carry more operational meaning than averages. The 90th percentile of response time, income, or waiting time is usually more informative than a mean.
+
+Common descriptive quantiles:
+
+-   **Median (**$Q_{0.5}$): robust center
+-   **Interquartile range (IQR)**: spread of the middle 50%
+-   **Tail quantiles**: $Q_{0.9}$, $Q_{0.95}$, $Q_{0.99}$ for risk or extreme behavior
+
+These are especially important in skewed or heavy‑tailed distributions where the mean can be misleading.
+
+### Skewness, Kurtosis, and Robust Alternatives
+
+Skewness and kurtosis summarize asymmetry and tail heaviness, but they are sensitive to outliers. In descriptive work, **robust measures** often provide more stable diagnostics:
+
+-   **Median absolute deviation (MAD)** as a scale measure
+-   **Robust z‑scores** using median and MAD instead of mean and standard deviation (SD)
+-   **Quantile ratios** (e.g., $Q_{0.9}/Q_{0.5}$) for skewness proxies
+
+These measures preserve descriptive intent while reducing sensitivity to extreme observations.
+
+### Density and Empirical Distribution Functions
+
+Histograms can be misleading due to binning choices. Kernel density estimates (KDEs) and empirical CDFs show shape more faithfully. ECDFs are particularly useful for comparing distributions because they show the full cumulative structure without smoothing.
+
+## Multimodality and Mixtures
+
+A single distribution can conceal multiple regimes. For example, household income often reflects a mixture of wage earners, retirees, and business owners. Multimodality is a descriptive signal of underlying subpopulations. Techniques to detect it include:
+
+-   **Kernel density plots** with multiple peaks
+-   **Bimodality coefficients** or dip tests (used descriptively)
+-   **Mixture summaries** (e.g., fitting a Gaussian mixture model purely for segmentation)
+
+Even without formal modeling, visual inspection and stratified summaries can reveal important mixtures.
+
+## Bivariate and Conditional Descriptives
+
+### Conditional Means and Quantiles
+
+Univariate summaries hide conditional variation. A variable may have a stable mean overall but vary dramatically across categories. Conditional statistics are simple to compute and often reveal key structure:
+
+-   $E(Y\mid X)$: mean outcomes by group
+-   $Q_{0.5}(Y\mid X)$: median outcomes by group
+-   $\text{IQR}(Y\mid X)$: spread by group
+
+These summaries can be visualized using grouped boxplots, violin plots, or ridgeline plots.
+
+### Nonlinear Relationships
+
+Scatterplots with smoothers (e.g., LOESS) often reveal nonlinear trends that correlations miss. A zero correlation does not imply “no relationship”; it may reflect a U‑shape, threshold effect, or segmented pattern.
+
+A useful descriptive strategy is to compute **binned summaries**: divide a continuous predictor into quantile bins and summarize the response within each bin. This provides a simple approximation of conditional structure without invoking a full model.
+
+### Association Heterogeneity
+
+Associations can differ across subgroups. An overall correlation might hide a strong relationship within a subgroup or even mask a reversal (Simpson’s paradox). Descriptive analysis should therefore report **stratified associations** when meaningful groupings exist.
+
+## Outliers, Extremes, and Influence
+
+Outliers are not always errors. They often carry substantive meaning: high‑risk patients, exceptional transactions, or rare events. Descriptive analysis should treat outliers as *signals* first, and errors second.
+
+Key descriptive checks include:
+
+-   **Tail inspection**: list the largest/smallest observations
+-   **Influence screening**: compare summaries with and without extreme values
+-   **Robust summaries**: medians, trimmed means, and MAD
+
+A practical workflow is to compute both standard and robust summaries side by side. Large divergence is a flag that distributional extremes matter.
+
+## Missing Data as Descriptive Information
+
+Missingness is itself informative. The *pattern* of missing data can reveal survey fatigue, data collection issues, or systematic exclusion of certain groups.
+
+Descriptive checks include:
+
+-   **Missingness rates by variable**
+-   **Missingness by subgroup** (e.g., higher nonresponse among certain demographics)
+-   **Co‑missingness patterns** (variables missing together)
+
+Understanding missingness patterns is a prerequisite for credible descriptive analysis because it reveals which parts of the data are under‑observed or biased.
+
+## Scaling, Standardization, and Comparability
+
+When comparing variables on different scales, raw summaries can mislead. Standardization puts variables on a common metric:
+
+$$
+Z = \frac{X - \mu}{\sigma}
+$$
+
+However, standardization is not always desirable. For skewed or heavy‑tailed distributions, **robust scaling** using medians and MAD can be more appropriate:
+
+$$
+Z_{\text{robust}} = \frac{X - \text{median}(X)}{\text{MAD}(X)}
+$$
+
+Standardization is especially useful when building **profiles** of observations across many variables, a topic revisited in later chapters on clustering and tree‑based methods.
+
+## Multivariate Profiles and “Descriptive Models”
+
+As dimensionality increases, summaries must become multivariate. Two simple but powerful tools are:
+
+1.  **Profile tables**: compare multiple variables across key subgroups (e.g., demographic segments)
+2.  **Composite indices**: average or weighted sums of standardized variables to create a high‑level descriptive score
+
+Composite indices are not causal models; they are descriptive constructs that summarize a multidimensional concept (e.g., socioeconomic status, health risk, engagement intensity). Transparency in construction is essential for interpretability.
+
+## Visual Descriptives That Scale
+
+Certain visual tools provide richer descriptive information than conventional charts:
+
+-   **Violin plots**: show full distribution and density
+-   **Boxen plots**: emphasize tails across many observations
+-   **Ridge plots**: compare distributions across many groups
+-   **Heatmaps**: visualize large tables of summary statistics
+-   **ECDFs**: compare distributions without binning
+
+These graphics remain descriptive but give a more faithful sense of distributional complexity and subgroup structure.
+
+## A Practical Workflow
+
+A robust descriptive workflow often follows this sequence:
+
+1.  **Univariate inspection**: quantiles, density plots, robust summaries
+2.  **Missingness mapping**: rates, patterns, co‑missingness
+3.  **Bivariate exploration**: conditional summaries, scatterplots with smoothers
+4.  **Stratified checks**: subgroup comparisons, heterogeneity in associations
+5.  **Multivariate summaries**: profiles and composite indices
+
+This workflow remains entirely descriptive while systematically uncovering structure that basic summary tables would miss.
+
+## Example: A Small R Template
+
+The following minimal template illustrates how to go beyond means and SDs with a few descriptive enhancements:
+
+```{r}
+# Robust summary for a numeric variable
+summary_stats <- function(x) {
+  x <- x[!is.na(x)]
+  c(
+    mean = mean(x),
+    median = median(x),
+    sd = sd(x),
+    mad = mad(x),
+    q10 = quantile(x, 0.10),
+    q90 = quantile(x, 0.90)
+  )
+}
+
+# Conditional summaries by group
+by_group <- tapply(mtcars$mpg, mtcars$cyl, summary_stats)
+by_group
+```
+
+The aim is not sophistication but *discipline*: always inspect robust, conditional, and distributional features before moving to advanced methods.
+
+## Looking Ahead
+
+This chapter expands the descriptive mindset beyond simple averages. The next chapters formalize these ideas for mixed data types and systematic association measures. Once variable types are correctly handled, we can build **type‑aware association matrices**, visualize them as networks, and scale descriptive analysis to hundreds of variables.
+
+The key lesson is simple: **descriptive analysis improves when we stop summarizing variables in isolation and start describing structure**.

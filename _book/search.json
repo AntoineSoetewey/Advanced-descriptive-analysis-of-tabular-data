@@ -233,5 +233,148 @@
       "Foundations",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preparation for Descriptive Analysis</span>"
     ]
+  },
+  {
+    "objectID": "chapter-01-beyond-basic-descriptives.html",
+    "href": "chapter-01-beyond-basic-descriptives.html",
+    "title": "2  Beyond Basic Descriptive Statistics",
+    "section": "",
+    "text": "2.1 Why “Basic” Summaries Are Not Enough\nA mean, a median, and a standard deviation can be computed in seconds, but they rarely tell the whole story. Two datasets can share identical means and variances while having radically different shapes, outlier structures, or subgroup patterns. In high‑dimensional datasets, univariate summaries also conceal interaction and conditional relationships that often matter more than any marginal distribution.\nBasic descriptive statistics are necessary but not sufficient. This chapter expands the descriptive toolbox with methods that remain non‑inferential but offer far richer insight into data structure. The goal is to answer more nuanced questions:",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Beyond Basic Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-01-beyond-basic-descriptives.html#why-basic-summaries-are-not-enough",
+    "href": "chapter-01-beyond-basic-descriptives.html#why-basic-summaries-are-not-enough",
+    "title": "2  Beyond Basic Descriptive Statistics",
+    "section": "",
+    "text": "Where are the mass and tails of the distribution?\nAre there subpopulations with distinct profiles?\nAre relationships nonlinear, heterogeneous, or conditional?\nWhich variables are stable versus volatile across subgroups?",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Beyond Basic Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-01-beyond-basic-descriptives.html#distributional-shape-beyond-mean-and-variance",
+    "href": "chapter-01-beyond-basic-descriptives.html#distributional-shape-beyond-mean-and-variance",
+    "title": "2  Beyond Basic Descriptive Statistics",
+    "section": "2.2 Distributional Shape: Beyond Mean and Variance",
+    "text": "2.2 Distributional Shape: Beyond Mean and Variance\n\n2.2.1 Quantiles and Tail Behavior\nQuantiles describe where the data live, not just how they average out. In applied settings, percentiles often carry more operational meaning than averages. The 90th percentile of response time, income, or waiting time is usually more informative than a mean.\nCommon descriptive quantiles:\n\nMedian (\\(Q_{0.5}\\)): robust center\nInterquartile range (IQR): spread of the middle 50%\nTail quantiles: \\(Q_{0.9}\\), \\(Q_{0.95}\\), \\(Q_{0.99}\\) for risk or extreme behavior\n\nThese are especially important in skewed or heavy‑tailed distributions where the mean can be misleading.\n\n\n2.2.2 Skewness, Kurtosis, and Robust Alternatives\nSkewness and kurtosis summarize asymmetry and tail heaviness, but they are sensitive to outliers. In descriptive work, robust measures often provide more stable diagnostics:\n\nMedian absolute deviation (MAD) as a scale measure\nRobust z‑scores using median and MAD instead of mean and SD\nQuantile ratios (e.g., \\(Q_{0.9}/Q_{0.5}\\)) for skewness proxies\n\nThese measures preserve descriptive intent while reducing sensitivity to extreme observations.\n\n\n2.2.3 Density and Empirical Distribution Functions\nHistograms can be misleading due to binning choices. Kernel density estimates (KDEs) and empirical CDFs show shape more faithfully. ECDFs are particularly useful for comparing distributions because they show the full cumulative structure without smoothing.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Beyond Basic Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-01-beyond-basic-descriptives.html#multimodality-and-mixtures",
+    "href": "chapter-01-beyond-basic-descriptives.html#multimodality-and-mixtures",
+    "title": "2  Beyond Basic Descriptive Statistics",
+    "section": "2.3 Multimodality and Mixtures",
+    "text": "2.3 Multimodality and Mixtures\nA single distribution can conceal multiple regimes. For example, household income often reflects a mixture of wage earners, retirees, and business owners. Multimodality is a descriptive signal of underlying subpopulations. Techniques to detect it include:\n\nKernel density plots with multiple peaks\nBimodality coefficients or dip tests (used descriptively)\nMixture summaries (e.g., fitting a Gaussian mixture model purely for segmentation)\n\nEven without formal modeling, visual inspection and stratified summaries can reveal important mixtures.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Beyond Basic Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-01-beyond-basic-descriptives.html#bivariate-and-conditional-descriptives",
+    "href": "chapter-01-beyond-basic-descriptives.html#bivariate-and-conditional-descriptives",
+    "title": "2  Beyond Basic Descriptive Statistics",
+    "section": "2.4 Bivariate and Conditional Descriptives",
+    "text": "2.4 Bivariate and Conditional Descriptives\n\n2.4.1 Conditional Means and Quantiles\nUnivariate summaries hide conditional variation. A variable may have a stable mean overall but vary dramatically across categories. Conditional statistics are simple to compute and often reveal key structure:\n\n\\(E(Y\\mid X)\\): mean outcomes by group\n\\(Q_{0.5}(Y\\mid X)\\): median outcomes by group\n\\(\\text{IQR}(Y\\mid X)\\): spread by group\n\nThese summaries can be visualized using grouped boxplots, violin plots, or ridgeline plots.\n\n\n2.4.2 Nonlinear Relationships\nScatterplots with smoothers (e.g., LOESS) often reveal nonlinear trends that correlations miss. A zero correlation does not imply “no relationship”; it may reflect a U‑shape, threshold effect, or segmented pattern.\nA useful descriptive strategy is to compute binned summaries: divide a continuous predictor into quantile bins and summarize the response within each bin. This provides a simple approximation of conditional structure without invoking a full model.\n\n\n2.4.3 Association Heterogeneity\nAssociations can differ across subgroups. An overall correlation might hide a strong relationship within a subgroup or even mask a reversal (Simpson’s paradox). Descriptive analysis should therefore report stratified associations when meaningful groupings exist.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Beyond Basic Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-01-beyond-basic-descriptives.html#outliers-extremes-and-influence",
+    "href": "chapter-01-beyond-basic-descriptives.html#outliers-extremes-and-influence",
+    "title": "2  Beyond Basic Descriptive Statistics",
+    "section": "2.5 Outliers, Extremes, and Influence",
+    "text": "2.5 Outliers, Extremes, and Influence\nOutliers are not always errors. They often carry substantive meaning: high‑risk patients, exceptional transactions, or rare events. Descriptive analysis should treat outliers as signals first, and errors second.\nKey descriptive checks include:\n\nTail inspection: list the largest/smallest observations\nInfluence screening: compare summaries with and without extreme values\nRobust summaries: medians, trimmed means, and MAD\n\nA practical workflow is to compute both standard and robust summaries side by side. Large divergence is a flag that distributional extremes matter.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Beyond Basic Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-01-beyond-basic-descriptives.html#missing-data-as-descriptive-information",
+    "href": "chapter-01-beyond-basic-descriptives.html#missing-data-as-descriptive-information",
+    "title": "2  Beyond Basic Descriptive Statistics",
+    "section": "2.6 Missing Data as Descriptive Information",
+    "text": "2.6 Missing Data as Descriptive Information\nMissingness is itself informative. The pattern of missing data can reveal survey fatigue, data collection issues, or systematic exclusion of certain groups.\nDescriptive checks include:\n\nMissingness rates by variable\nMissingness by subgroup (e.g., higher nonresponse among certain demographics)\nCo‑missingness patterns (variables missing together)\n\nUnderstanding missingness patterns is a prerequisite for credible descriptive analysis because it reveals which parts of the data are under‑observed or biased.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Beyond Basic Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-01-beyond-basic-descriptives.html#scaling-standardization-and-comparability",
+    "href": "chapter-01-beyond-basic-descriptives.html#scaling-standardization-and-comparability",
+    "title": "2  Beyond Basic Descriptive Statistics",
+    "section": "2.7 Scaling, Standardization, and Comparability",
+    "text": "2.7 Scaling, Standardization, and Comparability\nWhen comparing variables on different scales, raw summaries can mislead. Standardization puts variables on a common metric:\n\\[\nZ = \\frac{X - \\mu}{\\sigma}\n\\]\nHowever, standardization is not always desirable. For skewed or heavy‑tailed distributions, robust scaling using medians and MAD can be more appropriate:\n\\[\nZ_{\\text{robust}} = \\frac{X - \\text{median}(X)}{\\text{MAD}(X)}\n\\]\nStandardization is especially useful when building profiles of observations across many variables, a topic revisited in later chapters on clustering and tree‑based methods.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Beyond Basic Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-01-beyond-basic-descriptives.html#multivariate-profiles-and-descriptive-models",
+    "href": "chapter-01-beyond-basic-descriptives.html#multivariate-profiles-and-descriptive-models",
+    "title": "2  Beyond Basic Descriptive Statistics",
+    "section": "2.8 Multivariate Profiles and “Descriptive Models”",
+    "text": "2.8 Multivariate Profiles and “Descriptive Models”\nAs dimensionality increases, summaries must become multivariate. Two simple but powerful tools are:\n\nProfile tables: compare multiple variables across key subgroups (e.g., demographic segments)\nComposite indices: average or weighted sums of standardized variables to create a high‑level descriptive score\n\nComposite indices are not causal models; they are descriptive constructs that summarize a multidimensional concept (e.g., socioeconomic status, health risk, engagement intensity). Transparency in construction is essential for interpretability.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Beyond Basic Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-01-beyond-basic-descriptives.html#visual-descriptives-that-scale",
+    "href": "chapter-01-beyond-basic-descriptives.html#visual-descriptives-that-scale",
+    "title": "2  Beyond Basic Descriptive Statistics",
+    "section": "2.9 Visual Descriptives That Scale",
+    "text": "2.9 Visual Descriptives That Scale\nCertain visual tools provide richer descriptive information than conventional charts:\n\nViolin plots: show full distribution and density\nBoxen plots: emphasize tails across many observations\nRidge plots: compare distributions across many groups\nHeatmaps: visualize large tables of summary statistics\nECDFs: compare distributions without binning\n\nThese graphics remain descriptive but give a more faithful sense of distributional complexity and subgroup structure.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Beyond Basic Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-01-beyond-basic-descriptives.html#a-practical-workflow",
+    "href": "chapter-01-beyond-basic-descriptives.html#a-practical-workflow",
+    "title": "2  Beyond Basic Descriptive Statistics",
+    "section": "2.10 A Practical Workflow",
+    "text": "2.10 A Practical Workflow\nA robust descriptive workflow often follows this sequence:\n\nUnivariate inspection: quantiles, density plots, robust summaries\nMissingness mapping: rates, patterns, co‑missingness\nBivariate exploration: conditional summaries, scatterplots with smoothers\nStratified checks: subgroup comparisons, heterogeneity in associations\nMultivariate summaries: profiles and composite indices\n\nThis workflow remains entirely descriptive while systematically uncovering structure that basic summary tables would miss.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Beyond Basic Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-01-beyond-basic-descriptives.html#example-a-small-r-template",
+    "href": "chapter-01-beyond-basic-descriptives.html#example-a-small-r-template",
+    "title": "2  Beyond Basic Descriptive Statistics",
+    "section": "2.11 Example: A Small R Template",
+    "text": "2.11 Example: A Small R Template\nThe following minimal template illustrates how to go beyond means and SDs with a few descriptive enhancements:\n\n# Robust summary for a numeric variable\nsummary_stats &lt;- function(x) {\n  x &lt;- x[!is.na(x)]\n  c(\n    mean = mean(x),\n    median = median(x),\n    sd = sd(x),\n    mad = mad(x),\n    q10 = quantile(x, 0.10),\n    q90 = quantile(x, 0.90)\n  )\n}\n\n# Conditional summaries by group\nby_group &lt;- tapply(mtcars$mpg, mtcars$cyl, summary_stats)\nby_group\n\n$`4`\n     mean    median        sd       mad   q10.10%   q90.90% \n26.663636 26.000000  4.509828  6.523440 21.500000 32.400000 \n\n$`6`\n     mean    median        sd       mad   q10.10%   q90.90% \n19.742857 19.700000  1.453567  1.927380 17.980000 21.160000 \n\n$`8`\n     mean    median        sd       mad   q10.10%   q90.90% \n15.100000 15.200000  2.560048  1.556730 11.270000 18.280000 \n\n\nThe aim is not sophistication but discipline: always inspect robust, conditional, and distributional features before moving to advanced methods.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Beyond Basic Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-01-beyond-basic-descriptives.html#looking-ahead",
+    "href": "chapter-01-beyond-basic-descriptives.html#looking-ahead",
+    "title": "2  Beyond Basic Descriptive Statistics",
+    "section": "2.12 Looking Ahead",
+    "text": "2.12 Looking Ahead\nThis chapter expands the descriptive mindset beyond simple averages. The next chapters formalize these ideas for mixed data types and systematic association measures. Once variable types are correctly handled, we can build type‑aware association matrices, visualize them as networks, and scale descriptive analysis to hundreds of variables.\nThe key lesson is simple: descriptive analysis improves when we stop summarizing variables in isolation and start describing structure.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Beyond Basic Descriptive Statistics</span>"
+    ]
   }
 ]

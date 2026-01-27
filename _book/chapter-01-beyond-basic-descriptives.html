@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -71,6 +106,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -389,15 +453,42 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-basic-summaries-are-not-enough" id="toc-why-basic-summaries-are-not-enough" class="nav-link active" data-scroll-target="#why-basic-summaries-are-not-enough"><span class="header-section-number">2.1</span> Why “Basic” Summaries Are Not Enough</a></li>
+  <li><a href="#distributional-shape-beyond-mean-and-variance" id="toc-distributional-shape-beyond-mean-and-variance" class="nav-link" data-scroll-target="#distributional-shape-beyond-mean-and-variance"><span class="header-section-number">2.2</span> Distributional Shape: Beyond Mean and Variance</a>
+  <ul class="collapse">
+  <li><a href="#quantiles-and-tail-behavior" id="toc-quantiles-and-tail-behavior" class="nav-link" data-scroll-target="#quantiles-and-tail-behavior"><span class="header-section-number">2.2.1</span> Quantiles and Tail Behavior</a></li>
+  <li><a href="#skewness-kurtosis-and-robust-alternatives" id="toc-skewness-kurtosis-and-robust-alternatives" class="nav-link" data-scroll-target="#skewness-kurtosis-and-robust-alternatives"><span class="header-section-number">2.2.2</span> Skewness, Kurtosis, and Robust Alternatives</a></li>
+  <li><a href="#density-and-empirical-distribution-functions" id="toc-density-and-empirical-distribution-functions" class="nav-link" data-scroll-target="#density-and-empirical-distribution-functions"><span class="header-section-number">2.2.3</span> Density and Empirical Distribution Functions</a></li>
+  </ul></li>
+  <li><a href="#multimodality-and-mixtures" id="toc-multimodality-and-mixtures" class="nav-link" data-scroll-target="#multimodality-and-mixtures"><span class="header-section-number">2.3</span> Multimodality and Mixtures</a></li>
+  <li><a href="#bivariate-and-conditional-descriptives" id="toc-bivariate-and-conditional-descriptives" class="nav-link" data-scroll-target="#bivariate-and-conditional-descriptives"><span class="header-section-number">2.4</span> Bivariate and Conditional Descriptives</a>
+  <ul class="collapse">
+  <li><a href="#conditional-means-and-quantiles" id="toc-conditional-means-and-quantiles" class="nav-link" data-scroll-target="#conditional-means-and-quantiles"><span class="header-section-number">2.4.1</span> Conditional Means and Quantiles</a></li>
+  <li><a href="#nonlinear-relationships" id="toc-nonlinear-relationships" class="nav-link" data-scroll-target="#nonlinear-relationships"><span class="header-section-number">2.4.2</span> Nonlinear Relationships</a></li>
+  <li><a href="#association-heterogeneity" id="toc-association-heterogeneity" class="nav-link" data-scroll-target="#association-heterogeneity"><span class="header-section-number">2.4.3</span> Association Heterogeneity</a></li>
+  </ul></li>
+  <li><a href="#outliers-extremes-and-influence" id="toc-outliers-extremes-and-influence" class="nav-link" data-scroll-target="#outliers-extremes-and-influence"><span class="header-section-number">2.5</span> Outliers, Extremes, and Influence</a></li>
+  <li><a href="#missing-data-as-descriptive-information" id="toc-missing-data-as-descriptive-information" class="nav-link" data-scroll-target="#missing-data-as-descriptive-information"><span class="header-section-number">2.6</span> Missing Data as Descriptive Information</a></li>
+  <li><a href="#scaling-standardization-and-comparability" id="toc-scaling-standardization-and-comparability" class="nav-link" data-scroll-target="#scaling-standardization-and-comparability"><span class="header-section-number">2.7</span> Scaling, Standardization, and Comparability</a></li>
+  <li><a href="#multivariate-profiles-and-descriptive-models" id="toc-multivariate-profiles-and-descriptive-models" class="nav-link" data-scroll-target="#multivariate-profiles-and-descriptive-models"><span class="header-section-number">2.8</span> Multivariate Profiles and “Descriptive Models”</a></li>
+  <li><a href="#visual-descriptives-that-scale" id="toc-visual-descriptives-that-scale" class="nav-link" data-scroll-target="#visual-descriptives-that-scale"><span class="header-section-number">2.9</span> Visual Descriptives That Scale</a></li>
+  <li><a href="#a-practical-workflow" id="toc-a-practical-workflow" class="nav-link" data-scroll-target="#a-practical-workflow"><span class="header-section-number">2.10</span> A Practical Workflow</a></li>
+  <li><a href="#example-a-small-r-template" id="toc-example-a-small-r-template" class="nav-link" data-scroll-target="#example-a-small-r-template"><span class="header-section-number">2.11</span> Example: A Small R Template</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead"><span class="header-section-number">2.12</span> Looking Ahead</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/edit/main/chapter-01-beyond-basic-descriptives.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/blob/main/chapter-01-beyond-basic-descriptives.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-00-introduction.html">Foundations</a></li><li class="breadcrumb-item"><a href="./chapter-01-beyond-basic-descriptives.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Beyond Basic Descriptive Statistics</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Beyond Basic Descriptive Statistics</span></h1>
+<h1 class="title"><span id="sec-beyond-basic" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Beyond Basic Descriptive Statistics</span></span></h1>
 </div>
 
 
@@ -414,8 +505,187 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="why-basic-summaries-are-not-enough" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="why-basic-summaries-are-not-enough"><span class="header-section-number">2.1</span> Why “Basic” Summaries Are Not Enough</h2>
+<p>A mean, a median, and a standard deviation can be computed in seconds, but they rarely tell the whole story. Two datasets can share identical means and variances while having radically different shapes, outlier structures, or subgroup patterns. In high‑dimensional datasets, univariate summaries also conceal interaction and conditional relationships that often matter more than any marginal distribution.</p>
+<p>Basic descriptive statistics are necessary but not sufficient. This chapter expands the descriptive toolbox with methods that remain <strong>non‑inferential</strong> but offer far richer insight into data structure. The goal is to answer more nuanced questions:</p>
+<ul>
+<li>Where are the <em>mass</em> and <em>tails</em> of the distribution?</li>
+<li>Are there <strong>subpopulations</strong> with distinct profiles?</li>
+<li>Are relationships <strong>nonlinear</strong>, <strong>heterogeneous</strong>, or <strong>conditional</strong>?</li>
+<li>Which variables are <strong>stable</strong> versus <strong>volatile</strong> across subgroups?</li>
+</ul>
+</section>
+<section id="distributional-shape-beyond-mean-and-variance" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="distributional-shape-beyond-mean-and-variance"><span class="header-section-number">2.2</span> Distributional Shape: Beyond Mean and Variance</h2>
+<section id="quantiles-and-tail-behavior" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="quantiles-and-tail-behavior"><span class="header-section-number">2.2.1</span> Quantiles and Tail Behavior</h3>
+<p>Quantiles describe where the data live, not just how they average out. In applied settings, percentiles often carry more operational meaning than averages. The 90th percentile of response time, income, or waiting time is usually more informative than a mean.</p>
+<p>Common descriptive quantiles:</p>
+<ul>
+<li><strong>Median (</strong><span class="math inline">\(Q_{0.5}\)</span>): robust center</li>
+<li><strong>Interquartile range (IQR)</strong>: spread of the middle 50%</li>
+<li><strong>Tail quantiles</strong>: <span class="math inline">\(Q_{0.9}\)</span>, <span class="math inline">\(Q_{0.95}\)</span>, <span class="math inline">\(Q_{0.99}\)</span> for risk or extreme behavior</li>
+</ul>
+<p>These are especially important in skewed or heavy‑tailed distributions where the mean can be misleading.</p>
+</section>
+<section id="skewness-kurtosis-and-robust-alternatives" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="skewness-kurtosis-and-robust-alternatives"><span class="header-section-number">2.2.2</span> Skewness, Kurtosis, and Robust Alternatives</h3>
+<p>Skewness and kurtosis summarize asymmetry and tail heaviness, but they are sensitive to outliers. In descriptive work, <strong>robust measures</strong> often provide more stable diagnostics:</p>
+<ul>
+<li><strong>Median absolute deviation (MAD)</strong> as a scale measure</li>
+<li><strong>Robust z‑scores</strong> using median and MAD instead of mean and SD</li>
+<li><strong>Quantile ratios</strong> (e.g., <span class="math inline">\(Q_{0.9}/Q_{0.5}\)</span>) for skewness proxies</li>
+</ul>
+<p>These measures preserve descriptive intent while reducing sensitivity to extreme observations.</p>
+</section>
+<section id="density-and-empirical-distribution-functions" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="density-and-empirical-distribution-functions"><span class="header-section-number">2.2.3</span> Density and Empirical Distribution Functions</h3>
+<p>Histograms can be misleading due to binning choices. Kernel density estimates (KDEs) and empirical CDFs show shape more faithfully. ECDFs are particularly useful for comparing distributions because they show the full cumulative structure without smoothing.</p>
+</section>
+</section>
+<section id="multimodality-and-mixtures" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="multimodality-and-mixtures"><span class="header-section-number">2.3</span> Multimodality and Mixtures</h2>
+<p>A single distribution can conceal multiple regimes. For example, household income often reflects a mixture of wage earners, retirees, and business owners. Multimodality is a descriptive signal of underlying subpopulations. Techniques to detect it include:</p>
+<ul>
+<li><strong>Kernel density plots</strong> with multiple peaks</li>
+<li><strong>Bimodality coefficients</strong> or dip tests (used descriptively)</li>
+<li><strong>Mixture summaries</strong> (e.g., fitting a Gaussian mixture model purely for segmentation)</li>
+</ul>
+<p>Even without formal modeling, visual inspection and stratified summaries can reveal important mixtures.</p>
+</section>
+<section id="bivariate-and-conditional-descriptives" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="bivariate-and-conditional-descriptives"><span class="header-section-number">2.4</span> Bivariate and Conditional Descriptives</h2>
+<section id="conditional-means-and-quantiles" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="conditional-means-and-quantiles"><span class="header-section-number">2.4.1</span> Conditional Means and Quantiles</h3>
+<p>Univariate summaries hide conditional variation. A variable may have a stable mean overall but vary dramatically across categories. Conditional statistics are simple to compute and often reveal key structure:</p>
+<ul>
+<li><span class="math inline">\(E(Y\mid X)\)</span>: mean outcomes by group</li>
+<li><span class="math inline">\(Q_{0.5}(Y\mid X)\)</span>: median outcomes by group</li>
+<li><span class="math inline">\(\text{IQR}(Y\mid X)\)</span>: spread by group</li>
+</ul>
+<p>These summaries can be visualized using grouped boxplots, violin plots, or ridgeline plots.</p>
+</section>
+<section id="nonlinear-relationships" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="nonlinear-relationships"><span class="header-section-number">2.4.2</span> Nonlinear Relationships</h3>
+<p>Scatterplots with smoothers (e.g., LOESS) often reveal nonlinear trends that correlations miss. A zero correlation does not imply “no relationship”; it may reflect a U‑shape, threshold effect, or segmented pattern.</p>
+<p>A useful descriptive strategy is to compute <strong>binned summaries</strong>: divide a continuous predictor into quantile bins and summarize the response within each bin. This provides a simple approximation of conditional structure without invoking a full model.</p>
+</section>
+<section id="association-heterogeneity" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="association-heterogeneity"><span class="header-section-number">2.4.3</span> Association Heterogeneity</h3>
+<p>Associations can differ across subgroups. An overall correlation might hide a strong relationship within a subgroup or even mask a reversal (Simpson’s paradox). Descriptive analysis should therefore report <strong>stratified associations</strong> when meaningful groupings exist.</p>
+</section>
+</section>
+<section id="outliers-extremes-and-influence" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="outliers-extremes-and-influence"><span class="header-section-number">2.5</span> Outliers, Extremes, and Influence</h2>
+<p>Outliers are not always errors. They often carry substantive meaning: high‑risk patients, exceptional transactions, or rare events. Descriptive analysis should treat outliers as <em>signals</em> first, and errors second.</p>
+<p>Key descriptive checks include:</p>
+<ul>
+<li><strong>Tail inspection</strong>: list the largest/smallest observations</li>
+<li><strong>Influence screening</strong>: compare summaries with and without extreme values</li>
+<li><strong>Robust summaries</strong>: medians, trimmed means, and MAD</li>
+</ul>
+<p>A practical workflow is to compute both standard and robust summaries side by side. Large divergence is a flag that distributional extremes matter.</p>
+</section>
+<section id="missing-data-as-descriptive-information" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="missing-data-as-descriptive-information"><span class="header-section-number">2.6</span> Missing Data as Descriptive Information</h2>
+<p>Missingness is itself informative. The <em>pattern</em> of missing data can reveal survey fatigue, data collection issues, or systematic exclusion of certain groups.</p>
+<p>Descriptive checks include:</p>
+<ul>
+<li><strong>Missingness rates by variable</strong></li>
+<li><strong>Missingness by subgroup</strong> (e.g., higher nonresponse among certain demographics)</li>
+<li><strong>Co‑missingness patterns</strong> (variables missing together)</li>
+</ul>
+<p>Understanding missingness patterns is a prerequisite for credible descriptive analysis because it reveals which parts of the data are under‑observed or biased.</p>
+</section>
+<section id="scaling-standardization-and-comparability" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="scaling-standardization-and-comparability"><span class="header-section-number">2.7</span> Scaling, Standardization, and Comparability</h2>
+<p>When comparing variables on different scales, raw summaries can mislead. Standardization puts variables on a common metric:</p>
+<p><span class="math display">\[
+Z = \frac{X - \mu}{\sigma}
+\]</span></p>
+<p>However, standardization is not always desirable. For skewed or heavy‑tailed distributions, <strong>robust scaling</strong> using medians and MAD can be more appropriate:</p>
+<p><span class="math display">\[
+Z_{\text{robust}} = \frac{X - \text{median}(X)}{\text{MAD}(X)}
+\]</span></p>
+<p>Standardization is especially useful when building <strong>profiles</strong> of observations across many variables, a topic revisited in later chapters on clustering and tree‑based methods.</p>
+</section>
+<section id="multivariate-profiles-and-descriptive-models" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="multivariate-profiles-and-descriptive-models"><span class="header-section-number">2.8</span> Multivariate Profiles and “Descriptive Models”</h2>
+<p>As dimensionality increases, summaries must become multivariate. Two simple but powerful tools are:</p>
+<ol type="1">
+<li><strong>Profile tables</strong>: compare multiple variables across key subgroups (e.g., demographic segments)</li>
+<li><strong>Composite indices</strong>: average or weighted sums of standardized variables to create a high‑level descriptive score</li>
+</ol>
+<p>Composite indices are not causal models; they are descriptive constructs that summarize a multidimensional concept (e.g., socioeconomic status, health risk, engagement intensity). Transparency in construction is essential for interpretability.</p>
+</section>
+<section id="visual-descriptives-that-scale" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="visual-descriptives-that-scale"><span class="header-section-number">2.9</span> Visual Descriptives That Scale</h2>
+<p>Certain visual tools provide richer descriptive information than conventional charts:</p>
+<ul>
+<li><strong>Violin plots</strong>: show full distribution and density</li>
+<li><strong>Boxen plots</strong>: emphasize tails across many observations</li>
+<li><strong>Ridge plots</strong>: compare distributions across many groups</li>
+<li><strong>Heatmaps</strong>: visualize large tables of summary statistics</li>
+<li><strong>ECDFs</strong>: compare distributions without binning</li>
+</ul>
+<p>These graphics remain descriptive but give a more faithful sense of distributional complexity and subgroup structure.</p>
+</section>
+<section id="a-practical-workflow" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="a-practical-workflow"><span class="header-section-number">2.10</span> A Practical Workflow</h2>
+<p>A robust descriptive workflow often follows this sequence:</p>
+<ol type="1">
+<li><strong>Univariate inspection</strong>: quantiles, density plots, robust summaries</li>
+<li><strong>Missingness mapping</strong>: rates, patterns, co‑missingness</li>
+<li><strong>Bivariate exploration</strong>: conditional summaries, scatterplots with smoothers</li>
+<li><strong>Stratified checks</strong>: subgroup comparisons, heterogeneity in associations</li>
+<li><strong>Multivariate summaries</strong>: profiles and composite indices</li>
+</ol>
+<p>This workflow remains entirely descriptive while systematically uncovering structure that basic summary tables would miss.</p>
+</section>
+<section id="example-a-small-r-template" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="example-a-small-r-template"><span class="header-section-number">2.11</span> Example: A Small R Template</h2>
+<p>The following minimal template illustrates how to go beyond means and SDs with a few descriptive enhancements:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Robust summary for a numeric variable</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(x),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">median =</span> <span class="fu">median</span>(x),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd =</span> <span class="fu">sd</span>(x),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">mad =</span> <span class="fu">mad</span>(x),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">q10 =</span> <span class="fu">quantile</span>(x, <span class="fl">0.10</span>),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">q90 =</span> <span class="fu">quantile</span>(x, <span class="fl">0.90</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Conditional summaries by group</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>by_group <span class="ot">&lt;-</span> <span class="fu">tapply</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>cyl, summary_stats)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>by_group</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$`4`
+     mean    median        sd       mad   q10.10%   q90.90% 
+26.663636 26.000000  4.509828  6.523440 21.500000 32.400000 
+
+$`6`
+     mean    median        sd       mad   q10.10%   q90.90% 
+19.742857 19.700000  1.453567  1.927380 17.980000 21.160000 
+
+$`8`
+     mean    median        sd       mad   q10.10%   q90.90% 
+15.100000 15.200000  2.560048  1.556730 11.270000 18.280000 </code></pre>
+</div>
+</div>
+<p>The aim is not sophistication but <em>discipline</em>: always inspect robust, conditional, and distributional features before moving to advanced methods.</p>
+</section>
+<section id="looking-ahead" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="looking-ahead"><span class="header-section-number">2.12</span> Looking Ahead</h2>
+<p>This chapter expands the descriptive mindset beyond simple averages. The next chapters formalize these ideas for mixed data types and systematic association measures. Once variable types are correctly handled, we can build <strong>type‑aware association matrices</strong>, visualize them as networks, and scale descriptive analysis to hundreds of variables.</p>
+<p>The key lesson is simple: <strong>descriptive analysis improves when we stop summarizing variables in isolation and start describing structure</strong>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -835,4 +1105,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/edit/main/chapter-01-beyond-basic-descriptives.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/blob/main/chapter-01-beyond-basic-descriptives.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/edit/main/chapter-01-beyond-basic-descriptives.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/AntoineSoetewey/Advanced-descriptive-analysis-of-tabular-data/blob/main/chapter-01-beyond-basic-descriptives.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
